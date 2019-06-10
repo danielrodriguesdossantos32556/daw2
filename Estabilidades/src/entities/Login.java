@@ -1,4 +1,4 @@
-package interfaces;
+package entities;
 
 
 import javax.persistence.Entity;

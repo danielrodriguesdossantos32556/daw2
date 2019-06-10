@@ -1,4 +1,4 @@
-package interfaces;
+package entities;
 import java.util.ArrayList;
 
 import javax.persistence.Column;
@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import interfaces.ProjEstabilidade;
 
 @Entity
 @Table(name="usuario")

@@ -5,6 +5,14 @@ import java.util.ArrayList;
 
 import javax.xml.crypto.Data;
 
+import entities.Bairros;
+import entities.Cadastro;
+import entities.Denuncias;
+import entities.Login;
+import entities.Mapa;
+import entities.Ruas;
+import teste.Estabilidade;
+
 public interface ProjEstabilidade {
 	
 	public void Cidade(int cep, String nome, Mapa mapa, ArrayList<Ruas> ruas, ArrayList<Bairros> bairros);

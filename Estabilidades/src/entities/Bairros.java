@@ -1,4 +1,4 @@
-package interfaces;
+package entities;
 import java.util.ArrayList;
 
 import javax.persistence.Entity;
