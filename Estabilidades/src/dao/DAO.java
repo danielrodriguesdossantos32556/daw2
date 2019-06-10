@@ -15,7 +15,7 @@ public class DAO<E extends IdentifiableType> {
 		em.close();
 	}
 
-	public void update(E e) {
+	public void update(E e) { 
 		EntityManager em = factory.createEntityManager();
 		em.getTransaction().begin();
 		em.merge(e);
