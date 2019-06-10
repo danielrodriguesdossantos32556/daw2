@@ -1,3 +1,4 @@
+package teste;
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
@@ -15,11 +16,11 @@ public class TesteProjeto {
 
 	@Test
 	void criarCidade() {
-		Establidade nulo = null;
-		Establidade e = nulo;
+		Estabilidade nulo = null;
+		Estabilidade e = nulo;
 		ArrayList<Clip> cep = null;
-		Establidade mapa = nulo;
-		Establidade ruas = nulo;
+		Estabilidade mapa = nulo;
+		Estabilidade ruas = nulo;
 		ArrayList<Bairros> bairros = null;
 		Cidade c = e.criarCidade("Tsete de criação", cep, mapa, ruas, bairros);
 		asserNotNull(c);
@@ -38,7 +39,7 @@ public class TesteProjeto {
 		ArrayList<Bairros> bairro = null;
 		ArrayList<Name> nome = nulo;
 		ArrayList<Name> ruas = nulo;
-		ArrayList<Establidade> estavel = null;
+		ArrayList<Estabilidade> estavel = null;
 		Bairros b = ((Object) e).criarBairros(" Teste ", bairro, nome, estavel, ruas);
 		asserNotNull(b);
 		assertEquals(" Teste ", b.getBairros());
@@ -46,12 +47,12 @@ public class TesteProjeto {
 
 	@Test
 	void criarCadastro() {
-		Establidade nulo = null;
-		Establidade e = nulo;
+		Estabilidade nulo = null;
+		Estabilidade e = nulo;
 		ArrayList<Cadastro> cadastro = null;
-		Establidade senha = nulo;
-		Establidade nickname = nulo;
-		Establidade nome = nulo;
+		Estabilidade senha = nulo;
+		Estabilidade nickname = nulo;
+		Estabilidade nome = nulo;
 		ArrayList<String> email = null;
 		ArrayList<Data_de_nascimento> data_de_nascimento = null;
 		Object datadenascimento;
@@ -74,18 +75,18 @@ public class TesteProjeto {
 
 	@Test
 	void criarEstabilidade() {
-		Establidade e = null;
-		Establidade nulo = null;
-		Establidade iDC = nulo;
+		Estabilidade e = null;
+		Estabilidade nulo = null;
+		Estabilidade iDC = nulo;
 		ArrayList<String> estabilidade = null;
-		Establidade e1 = e.criarEstabilidade(" Teste Estabilidade ", iDC, estabilidade);
+		Estabilidade e1 = e.criarEstabilidade(" Teste Estabilidade ", iDC, estabilidade);
 		asserNotNull(e1);
 		assertEquals(" Teste usuario ", e1.getEstabilidade());
 	}
 
 	@Test
 	void criarLogin() {
-		Establidade e = null;
+		Estabilidade e = null;
 		ArrayList<Log> login = null;
 		ArrayList<String> senha = null;
 		ArrayList<String> nickName_usuario = null;
@@ -96,10 +97,10 @@ public class TesteProjeto {
 
 	@Test
 	void criarRuas() {
-		Establidade e = null;
+		Estabilidade e = null;
 		ArrayList<Ruas> ruas = null;
 		ArrayList<String> nome = null;
-		ArrayList<Establidade> estavel = null;
+		ArrayList<Estabilidade> estavel = null;
 		Ruas r = e.criarRuas(" Teste ", ruas, nome, estavel);
 		asserNotNull(r);
 		assertEquals(" Teste ", r.getClass());
@@ -113,7 +114,7 @@ public class TesteProjeto {
 		// TODO Auto-generated method stub
 	}
 
-	private void asserNotNull(Establidade e1) {
+	private void asserNotNull(Estabilidade e1) {
 		// TODO Auto-generated method stub
 	}
 

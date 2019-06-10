@@ -1,3 +1,4 @@
+package interfaces;
 
 
 import java.util.ArrayList;
@@ -9,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import teste.Estabilidade;
 @Entity
 @Table(name="ruas")
 public class Ruas {

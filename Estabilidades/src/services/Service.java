@@ -1,5 +1,8 @@
+package services;
 
 import java.util.List;
+
+import idenuncia.Identificavel;
 
 public interface Service<E extends Identificavel> {
 
@@ -12,9 +15,5 @@ public interface Service<E extends Identificavel> {
 	E getByID(long userId);
 
 	List<E> getAll();
-
-	void save(Usuario user);
-
-	void update(Usuario user);
 
 }
