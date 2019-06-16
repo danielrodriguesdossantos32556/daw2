@@ -2,7 +2,6 @@ package dao;
 
 import java.awt.List;
 
-import entities.Bairros;
 import entities.Denuncias;
 
 public class DenunciasDAO extends DAO<Denuncias> {
@@ -11,7 +10,7 @@ public class DenunciasDAO extends DAO<Denuncias> {
 		super();
 	}
 
-	public List findBy(Bairros filtro) {
+	public List findBy(Denuncias filtro) {
 		return null;
 	}
 
