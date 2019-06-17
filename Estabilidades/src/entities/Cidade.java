@@ -1,6 +1,7 @@
 package entities;
 
 
+import java.awt.List;
 import java.util.ArrayList;
 
 import javax.persistence.Entity;
@@ -82,6 +83,16 @@ public class Cidade {
 
 	public Object getCidade() {
 		return getCidade();
+	}
+
+	public Cidade getByID(long cidade) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List getAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

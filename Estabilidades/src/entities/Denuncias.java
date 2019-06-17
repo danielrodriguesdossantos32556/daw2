@@ -1,6 +1,7 @@
 package entities;
 
 
+import java.awt.List;
 import java.util.ArrayList;
 
 import javax.persistence.Entity;
@@ -67,6 +68,16 @@ public class Denuncias {
 		this.denuncias = denuncias;
 		this.denuncias_ruas = denuncias_ruas;
 		this.denuncias_bairros = denuncias_bairros;
+	}
+
+	public Denuncias getByID(long denuncias2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List getAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

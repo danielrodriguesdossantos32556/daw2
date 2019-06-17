@@ -14,4 +14,14 @@ public class LoginDAO extends DAO<Login> {
 		return null;
 	}
 
+	public Login getByID(long loginId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

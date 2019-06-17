@@ -14,4 +14,14 @@ public class UsuarioDAO extends DAO<Usuario> {
 		return null;
 	}
 
+	public Usuario getByID(long usuarioId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

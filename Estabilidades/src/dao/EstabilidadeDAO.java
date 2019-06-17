@@ -14,4 +14,14 @@ public class EstabilidadeDAO extends DAO<Estabilidade> {
 		return null;
 	}
 
+	public entities.Estabilidade getByID(long estabilidadeId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
