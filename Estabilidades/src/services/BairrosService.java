@@ -65,7 +65,7 @@ public class BairrosService implements Serializable, Service<Bairros> {
 	 * 
 	 * @see
 	 * br.edu.ifpb.esperanca.daw2.services.Service#delete(br.edu.ifpb.esperanca.daw2
-	 * .ifoto.entities.Usuario)
+	 * .ifoto.entities.Usuario) 
 	 */
 	@Override
 	public Bairros getByID(long bairros) {

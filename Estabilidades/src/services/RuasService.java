@@ -1,12 +1,12 @@
 package services;
 
-import java.awt.List;
+import java.awt.List; 
 import java.io.Serializable;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import dao.RuasDAO;
+import dao.RuasDAO; 
 import entities.Ruas;
 import util.TransacionalCdi;
 

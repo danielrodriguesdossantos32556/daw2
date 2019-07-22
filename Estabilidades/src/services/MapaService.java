@@ -1,12 +1,11 @@
 package services;
 
 import java.awt.List;
-import java.io.Serializable;
-
+import java.io.Serializable; 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import dao.MapaDAO;
+import dao.MapaDAO; 
 import entities.Mapa;
 import util.TransacionalCdi;
 

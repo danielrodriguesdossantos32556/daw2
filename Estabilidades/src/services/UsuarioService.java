@@ -36,7 +36,7 @@ import util.TransacionalCdi;
 	@TransacionalCdi
 	public  void  update (Usuario usuario) {
 		usuarioDAO.update(usuario);
-	}
+	}  
 	
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#delete(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
