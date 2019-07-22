@@ -82,3 +82,4 @@ public class DenunciasService implements Serializable, Service<Denuncias> {
 		return denunciasDAO.getAll();
 	}
 }
+

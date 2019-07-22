@@ -82,3 +82,4 @@ public class MapaService implements Serializable, Service<Mapa> {
 		return mapaDAO.getAll();
 	}
 }
+

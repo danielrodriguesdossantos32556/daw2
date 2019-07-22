@@ -2,9 +2,12 @@ package dao;
 
 import java.awt.List;
 
-import teste.Estabilidade;
+import javax.persistence.metamodel.IdentifiableType;
 
-public class EstabilidadeDAO extends DAO<Estabilidade> {
+import testes.Estabilidade;
+
+@SuppressWarnings("rawtypes")
+public class EstabilidadeDAO extends DAO<IdentifiableType> {
 
 	public EstabilidadeDAO() {
 		super();

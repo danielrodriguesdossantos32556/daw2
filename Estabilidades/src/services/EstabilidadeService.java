@@ -82,3 +82,4 @@ public class EstabilidadeService implements Serializable, Service<Estabilidade> 
 		return estabilidadeDAO.getAll();
 	}
 }
+

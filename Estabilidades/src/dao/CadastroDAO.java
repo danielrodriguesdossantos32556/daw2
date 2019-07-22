@@ -1,7 +1,5 @@
 package dao;
 
-import java.awt.List;
-
 import entities.Cadastro;
 
 public class CadastroDAO extends DAO<Cadastro> {
@@ -10,8 +8,5 @@ public class CadastroDAO extends DAO<Cadastro> {
 		super();
 	}
 
-	public List findBy(Cadastro filtro) {
-		return null;
-	}
 
 }

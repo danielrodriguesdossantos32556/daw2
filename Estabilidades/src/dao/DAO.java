@@ -2,11 +2,12 @@ package dao;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.metamodel.IdentifiableType;
+import idenuncia.Identificavel;
 
-public class DAO<E extends IdentifiableType> {
+public class DAO<E extends Identificavel> {
+	
 	private EntityManagerFactory factory = Persistence.createEntityManagerFactory("academico");
-
+	
 	public void save(E e) {
 		EntityManager em = factory.createEntityManager();
 		em.getTransaction().begin();
@@ -37,5 +38,6 @@ public class DAO<E extends IdentifiableType> {
 		em.close();
 		return e;
 	}
-
+	
 }
+

@@ -8,10 +8,11 @@ import javax.inject.Inject;
 
 import dao.CadastroDAO;
 import entities.Cadastro;
+import idenuncia.Identificavel;
 import util.TransacionalCdi;
 
 @ApplicationScoped
-public class CadastroService implements Serializable, Service<Cadastro> {
+public class CadastroService implements Serializable, Service<Identificavel> {
 
 	/**
 	 * 
@@ -19,7 +20,7 @@ public class CadastroService implements Serializable, Service<Cadastro> {
 	private static final long serialVersionUID = -7803325791425670859L;
 
 	@Inject
-	private Cadastro cadastro;
+	private CadastroDAO cadastro;
 
 	/*
 	 * (non-Javadoc)
@@ -28,10 +29,9 @@ public class CadastroService implements Serializable, Service<Cadastro> {
 	 * br.edu.ifpb.esperanca.daw2.services.Service#save(br.edu.ifpb.esperanca.daw2.
 	 * ifoto.entities.Usuario)
 	 */
-	@Override
 	@TransacionalCdi
 	public void save(Cadastro cadastro) {
-		cadastroDAO.save(cadastro);
+		CadastroDAO.save(cadastro);
 	}
 
 	/*
@@ -80,5 +80,35 @@ public class CadastroService implements Serializable, Service<Cadastro> {
 	@Override
 	public List<Cadastro> getAll() {
 		return cadastroDAO.getAll();
+	}
+
+	@Override
+	public void save(Identificavel e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Identificavel e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void remove(Identificavel e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Identificavel getByID(long userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public java.util.List<Identificavel> getAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

@@ -2,9 +2,12 @@ package dao;
 
 import java.awt.List;
 
+import javax.persistence.metamodel.IdentifiableType;
+
 import entities.Login;
 
-public class LoginDAO extends DAO<Login> {
+@SuppressWarnings("rawtypes")
+public class LoginDAO extends DAO<IdentifiableType> {
 
 	public LoginDAO() {
 		super();

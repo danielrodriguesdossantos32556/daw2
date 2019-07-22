@@ -1,7 +1,7 @@
 package services;
 
-import java.awt.List;
 import java.io.Serializable;
+import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -19,7 +19,7 @@ public class BairrosService implements Serializable, Service<Bairros> {
 	private static final long serialVersionUID = -7803325791425670859L;
 
 	@Inject
-	private Bairros bairros;
+	private BairrosDAO bairrosDAO;
 
 	/*
 	 * (non-Javadoc)
@@ -69,7 +69,7 @@ public class BairrosService implements Serializable, Service<Bairros> {
 	 */
 	@Override
 	public Bairros getByID(long bairros) {
-		return bairrosDAO.getByID(bairros);
+		return bairrosDAO.find(Bairros.classbairros);
 	}
 
 	/*
@@ -81,4 +81,6 @@ public class BairrosService implements Serializable, Service<Bairros> {
 	public List<Bairros> getAll() {
 		return bairrosDAO.getAll();
 	}
+
+	
 }

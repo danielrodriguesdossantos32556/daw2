@@ -1,4 +1,5 @@
 package entities;
+
 import java.util.ArrayList;
 
 import javax.persistence.Column;
@@ -9,30 +10,29 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.xml.crypto.Data;
 
 import interfaces.ProjEstabilidade;
 
 @Entity
-@Table(name="usuario")
+@Table(name = "usuario")
 public abstract class Usuario implements ProjEstabilidade {
-	
+
 	@Id
 	@GeneratedValue
-	@Column(name="Id_usuario")
+	@Column(name = "Id_usuario")
 	private int id_Usuario;
-	
+
+	private String nova_senha;
+	private String novo_nickname;
+	private String nome_completo;
+	private String email;
+	private Data data_de_nascimento;
+
 	@ManyToMany
-	@JoinTable(name =  "Cadastra", joinColumns = @JoinColumn(name = "id_cadastro"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
-	private ArrayList<Cadastro>cadastra;
-	
-	@ManyToMany
-	@JoinTable(name =  "Loga", joinColumns = @JoinColumn(name = "id_login"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
-	private ArrayList<Login>loga; 
-	
-	@ManyToMany
-	@JoinTable(name=" denuncias", joinColumns = @JoinColumn(name="id_denuncias"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
-	private ArrayList<Denuncias>faz_denuncias;
-	
+	@JoinTable(name = " denuncias", joinColumns = @JoinColumn(name = "id_denuncias"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
+	private ArrayList<Denuncias> faz_denuncias;
+
 // -------------------------------------------------------//	
 
 	public int getId_Usuario() {
@@ -43,39 +43,44 @@ public abstract class Usuario implements ProjEstabilidade {
 		this.id_Usuario = id_Usuario;
 	}
 
-	public ArrayList<Cadastro> getCadastra() {
-		return cadastra;
+	public String getNova_senha() {
+		return nova_senha;
 	}
 
-	public void setCadastra(ArrayList<Cadastro> cadastra) {
-		this.cadastra = cadastra;
+	public void setNova_senha(String nova_senha) {
+		this.nova_senha = nova_senha;
 	}
 
-	public ArrayList<Login> getLoga() {
-		return loga;
+	public String getNovo_nickname() {
+		return novo_nickname;
 	}
 
-	public void setLoga(ArrayList<Login> loga) {
-		this.loga = loga;
+	public void setNovo_nickname(String novo_nickname) {
+		this.novo_nickname = novo_nickname;
 	}
 
-	public ArrayList<Denuncias> getFaz_denuncias() {
-		return faz_denuncias;
+	public String getNome_completo() {
+		return nome_completo;
 	}
 
-	public void setFaz_denuncias(ArrayList<Denuncias> faz_denuncias) {
-		this.faz_denuncias = faz_denuncias;
+	public void setNome_completo(String nome_completo) {
+		this.nome_completo = nome_completo;
 	}
 
-	public Usuario(int id_Usuario, ArrayList<Cadastro> cadastra, ArrayList<Login> loga, ArrayList<Denuncias> faz_denuncias) {
-		super();
-		this.id_Usuario = id_Usuario;
-		this.cadastra = cadastra;
-		this.loga = loga;
-		this.faz_denuncias = faz_denuncias;
+	public String getEmail() {
+		return email;
 	}
 
-	
-	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Data getData_de_nascimento() {
+		return data_de_nascimento;
+	}
+
+	public void setData_de_nascimento(Data data_de_nascimento) {
+		this.data_de_nascimento = data_de_nascimento;
+	}
 
 }

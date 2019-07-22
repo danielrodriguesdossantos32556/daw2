@@ -64,3 +64,4 @@ import util.TransacionalCdi;
 				return ruasDAO.getAll();
 		}
 	}	
+

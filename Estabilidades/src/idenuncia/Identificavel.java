@@ -1,11 +1,10 @@
 package idenuncia;
 
-public class Identificavel {
+public interface Identificavel {
 
-	public Long getId() {
-		return null;
-	}
+	public Long getId();
 
-	public void setId(Long id) {
-	}
+	public void setId(Long id);
+	
+	
 }

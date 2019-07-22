@@ -2,9 +2,12 @@ package dao;
 
 import java.awt.List;
 
+import javax.persistence.metamodel.IdentifiableType;
+
 import entities.Mapa;
 
-public class MapaDAO extends DAO<Mapa> {
+@SuppressWarnings("rawtypes")
+public class MapaDAO extends DAO<IdentifiableType> {
 
 	public MapaDAO() {
 		super();

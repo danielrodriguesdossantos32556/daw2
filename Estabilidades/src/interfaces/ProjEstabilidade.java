@@ -6,12 +6,9 @@ import java.util.ArrayList;
 import javax.xml.crypto.Data;
 
 import entities.Bairros;
-import entities.Cadastro;
-import entities.Denuncias;
-import entities.Login;
 import entities.Mapa;
 import entities.Ruas;
-import teste.Estabilidade;
+import testes.Estabilidade;
 
 public interface ProjEstabilidade {
 	
@@ -34,9 +31,5 @@ public interface ProjEstabilidade {
 	
 	
 	public void Ruas(int id_ruas, String nome_ruas, ArrayList<Estabilidade> estavel);
-	
-	
-	public void Usuario(int id_Usuario, ArrayList<Cadastro> cadastra, ArrayList<Login> loga, ArrayList<Denuncias> faz_denuncias);
-	
 	
 }

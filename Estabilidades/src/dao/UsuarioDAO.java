@@ -2,9 +2,12 @@ package dao;
 
 import java.awt.List;
 
+import javax.persistence.metamodel.IdentifiableType;
+
 import entities.Usuario;
 
-public class UsuarioDAO extends DAO<Usuario> {
+@SuppressWarnings("rawtypes")
+public class UsuarioDAO extends DAO<IdentifiableType> {
 
 	public UsuarioDAO() {
 		super();

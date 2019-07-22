@@ -1,7 +1,6 @@
 package entities;
 
-
-import java.util.ArrayList;
+ import java.util.ArrayList;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +10,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import teste.Estabilidade;
 @Entity
 @Table(name="ruas")
 public class Ruas {
