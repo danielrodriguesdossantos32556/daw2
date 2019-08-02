@@ -2,12 +2,9 @@ package dao;
 
 import java.awt.List;
 
-import javax.persistence.metamodel.IdentifiableType;
-
 import entities.Ruas;
 
-@SuppressWarnings("rawtypes")
-public class RuasDAO extends DAO<IdentifiableType> {
+public class RuasDAO extends DAO<Ruas> {
 
 	public RuasDAO() {
 		super();
@@ -16,15 +13,4 @@ public class RuasDAO extends DAO<IdentifiableType> {
 	public List findBy(Ruas filtro) {
 		return null;
 	}
-
-	public Ruas getByID(long ruasId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public List getAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

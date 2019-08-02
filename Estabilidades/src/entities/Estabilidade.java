@@ -19,8 +19,6 @@ public class Estabilidade {
 
 	private String estabilidade;
 
-	// -------------------------------------------------------//
-
 	public int getIDC() {
 		return IDC;
 	}

@@ -8,6 +8,7 @@ import javax.inject.Inject;
 
 import dao.BairrosDAO;
 import entities.Bairros;
+import entities.Cadastro;
 import util.TransacionalCdi;
 
 @ApplicationScoped
@@ -69,7 +70,7 @@ public class BairrosService implements Serializable, Service<Bairros> {
 	 */
 	@Override
 	public Bairros getByID(long bairros) {
-		return bairrosDAO.find(Bairros.classbairros);
+		return bairrosDAO.getById(BairrosId);
 	}
 
 	/*
@@ -81,6 +82,14 @@ public class BairrosService implements Serializable, Service<Bairros> {
 	public List<Bairros> getAll() {
 		return bairrosDAO.getAll();
 	}
+
+	@Override
+	public void save(Cadastro cadastro) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 
 	
 }

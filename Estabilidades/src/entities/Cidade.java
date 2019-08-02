@@ -1,6 +1,5 @@
 package entities;
 
-
 import java.awt.List;
 import java.util.ArrayList;
 
@@ -10,27 +9,26 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import idenuncia.Identificavel;
+
 @Entity
-@Table(name="cidade")
-public class Cidade {
-	
+@Table(name = "cidade")
+public class Cidade implements Identificavel {
+
 	private int cep;
-	
+
 	private String nome;
 	@OneToOne
 	@JoinColumn
 	private Mapa mapa;
 	@ManyToMany
-	@JoinTable(name =  "Ruas", joinColumns = @JoinColumn(name = "cep"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
-	private ArrayList<Ruas>ruas;
+	@JoinTable(name = "Ruas", joinColumns = @JoinColumn(name = "cep"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
+	private ArrayList<Ruas> ruas;
 	@ManyToMany
-	@JoinTable(name =  "Bairros", joinColumns = @JoinColumn(name = "id_bairros"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
-	private ArrayList<Bairros>bairros;
-	
-	
-	//-----------------------------------------------------------//
-	
-	
+	@JoinTable(name = "Bairros", joinColumns = @JoinColumn(name = "id_bairros"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
+	private ArrayList<Bairros> bairros;
+
 	public int getCep() {
 		return cep;
 	}
@@ -38,8 +36,7 @@ public class Cidade {
 	public void setCep(int cep) {
 		this.cep = cep;
 	}
-//-----------------------------------------CONSTRUTOR/APAGAR?--------------------------------------------------------//
-	
+
 	public Cidade(int cep, String nome, Mapa mapa, ArrayList<Ruas> ruas, ArrayList<Bairros> bairros) {
 		super();
 		this.cep = cep;
@@ -86,16 +83,20 @@ public class Cidade {
 	}
 
 	public Cidade getByID(long cidade) {
-		// TODO Auto-generated method stub
-		return null;
+		return getByID(cidade);
 	}
 
 	public List getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return getAll();
 	}
-	
-	
-	
-	
+
+	@Override
+	public Long getId() {
+		return getId();
+	}
+
+	@Override
+	public void setId(Long id) {
+
+	}
 }

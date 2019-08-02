@@ -2,12 +2,10 @@ package dao;
 
 import java.awt.List;
 
-import javax.persistence.metamodel.IdentifiableType;
-
 import entities.Denuncias;
+import idenuncia.Identificavel;
 
-@SuppressWarnings("rawtypes")
-public class DenunciasDAO extends DAO<IdentifiableType> {
+public class DenunciasDAO extends DAO<Identificavel> {
 
 	public DenunciasDAO() {
 		super();
