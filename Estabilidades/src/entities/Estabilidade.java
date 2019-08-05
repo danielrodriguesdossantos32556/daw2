@@ -1,18 +1,15 @@
 package entities;
 
-import java.util.ArrayList;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.sound.sampled.Clip;
 
-import sun.rmi.runtime.Log;
+import idenuncia.Identificavel;
 
 @Entity
 @Table(name = "estabilidade")
-public class Estabilidade {
+public class Estabilidade implements Identificavel {
 	@Id
 	@GeneratedValue
 	private int IDC;
@@ -35,38 +32,48 @@ public class Estabilidade {
 		this.estabilidade = estabilidade;
 	}
 
-	public Estabilidade(int iDC, String estabilidade) {
-		super();
-		IDC = iDC;
-		this.estabilidade = estabilidade;
+	@Override
+	public String toString() {
+		return "Estabilidade [IDC=" + IDC + ", estabilidade=" + estabilidade + "]";
 	}
 
-	public Cidade criarCidade(String string, ArrayList<Clip> cep, Estabilidade mapa, Estabilidade ruas,
-			ArrayList<Bairros> bairros) {
-		// TODO Auto-generated method stub
-		return criarCidade(string, cep, mapa, ruas, bairros);
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + IDC;
+		result = prime * result + ((estabilidade == null) ? 0 : estabilidade.hashCode());
+		return result;
 	}
 
-	public Estabilidade criarEstabilidade(String string, Estabilidade iDC2, ArrayList<String> estabilidade2) {
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Estabilidade other = (Estabilidade) obj;
+		if (IDC != other.IDC)
+			return false;
+		if (estabilidade == null) {
+			if (other.estabilidade != null)
+				return false;
+		} else if (!estabilidade.equals(other.estabilidade))
+			return false;
+		return true;
+	}
+
+	@Override
+	public Long getId() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Log criarLogin(String string, ArrayList<Log> login, ArrayList<String> senha,
-			ArrayList<String> nickName_usuario) {
+	@Override
+	public void setId(Long id) {
 		// TODO Auto-generated method stub
-		return null;
+		
 	}
-
-	public Ruas criarRuas(String string, ArrayList<Ruas> ruas, ArrayList<String> nome, ArrayList<Estabilidade> estavel) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Denuncias criarDenuncias(String string, ArrayList<Denuncias> denuncias, ArrayList<String> denuncia,
-			ArrayList<Ruas> denuncias_ruas, ArrayList<Bairros> denuncias_bairros) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

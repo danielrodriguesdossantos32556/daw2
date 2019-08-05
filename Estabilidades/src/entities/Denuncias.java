@@ -1,6 +1,5 @@
 package entities;
 
-
 import java.awt.List;
 import java.util.ArrayList;
 
@@ -12,9 +11,11 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import idenuncia.Identificavel;
+
 @Entity
 @Table(name = "Denuncias")
-public class Denuncias {
+public class Denuncias implements Identificavel {
 	@Id
 	@GeneratedValue
 	private int id_denuncias;
@@ -78,6 +79,18 @@ public class Denuncias {
 	public List getAll() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setId(Long id) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -12,11 +12,12 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.xml.crypto.Data;
 
+import idenuncia.Identificavel;
 import interfaces.ProjEstabilidade;
 
 @Entity
 @Table(name = "usuario")
-public abstract class Usuario implements ProjEstabilidade {
+public class Usuario implements Identificavel {
 
 	@Id
 	@GeneratedValue
@@ -32,8 +33,6 @@ public abstract class Usuario implements ProjEstabilidade {
 	@ManyToMany
 	@JoinTable(name = " denuncias", joinColumns = @JoinColumn(name = "id_denuncias"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
 	private ArrayList<Denuncias> faz_denuncias;
-
-// -------------------------------------------------------//	
 
 	public int getId_Usuario() {
 		return id_Usuario;
@@ -81,6 +80,83 @@ public abstract class Usuario implements ProjEstabilidade {
 
 	public void setData_de_nascimento(Data data_de_nascimento) {
 		this.data_de_nascimento = data_de_nascimento;
+	}
+
+	@Override
+	public String toString() {
+		return "Usuario [id_Usuario=" + id_Usuario + ", nova_senha=" + nova_senha + ", novo_nickname=" + novo_nickname
+				+ ", nome_completo=" + nome_completo + ", email=" + email + ", data_de_nascimento=" + data_de_nascimento
+				+ ", faz_denuncias=" + faz_denuncias + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((data_de_nascimento == null) ? 0 : data_de_nascimento.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + ((faz_denuncias == null) ? 0 : faz_denuncias.hashCode());
+		result = prime * result + id_Usuario;
+		result = prime * result + ((nome_completo == null) ? 0 : nome_completo.hashCode());
+		result = prime * result + ((nova_senha == null) ? 0 : nova_senha.hashCode());
+		result = prime * result + ((novo_nickname == null) ? 0 : novo_nickname.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Usuario other = (Usuario) obj;
+		if (data_de_nascimento == null) {
+			if (other.data_de_nascimento != null)
+				return false;
+		} else if (!data_de_nascimento.equals(other.data_de_nascimento))
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (faz_denuncias == null) {
+			if (other.faz_denuncias != null)
+				return false;
+		} else if (!faz_denuncias.equals(other.faz_denuncias))
+			return false;
+		if (id_Usuario != other.id_Usuario)
+			return false;
+		if (nome_completo == null) {
+			if (other.nome_completo != null)
+				return false;
+		} else if (!nome_completo.equals(other.nome_completo))
+			return false;
+		if (nova_senha == null) {
+			if (other.nova_senha != null)
+				return false;
+		} else if (!nova_senha.equals(other.nova_senha))
+			return false;
+		if (novo_nickname == null) {
+			if (other.novo_nickname != null)
+				return false;
+		} else if (!novo_nickname.equals(other.novo_nickname))
+			return false;
+		return true;
+	}
+
+	@Override
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setId(Long id) {
+		// TODO Auto-generated method stub
+
 	}
 
 }

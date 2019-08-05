@@ -1,12 +1,11 @@
 package dao;
 
 import java.awt.List;
-
 import entities.Login;
 
-public class LoginDAO extends DAO<Login> {
+public class LoginDao extends DAO<Login> {
 
-	public LoginDAO() {
+	public LoginDao() {
 		super();
 	}
 

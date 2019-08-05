@@ -37,15 +37,6 @@ public class Cidade implements Identificavel {
 		this.cep = cep;
 	}
 
-	public Cidade(int cep, String nome, Mapa mapa, ArrayList<Ruas> ruas, ArrayList<Bairros> bairros) {
-		super();
-		this.cep = cep;
-		this.nome = nome;
-		this.mapa = mapa;
-		this.ruas = ruas;
-		this.bairros = bairros;
-	}
-
 	public String getNome() {
 		return nome;
 	}
@@ -99,4 +90,57 @@ public class Cidade implements Identificavel {
 	public void setId(Long id) {
 
 	}
+
+	@Override
+	public String toString() {
+		return "Cidade [cep=" + cep + ", nome=" + nome + ", mapa=" + mapa + ", ruas=" + ruas + ", bairros=" + bairros
+				+ "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((bairros == null) ? 0 : bairros.hashCode());
+		result = prime * result + cep;
+		result = prime * result + ((mapa == null) ? 0 : mapa.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((ruas == null) ? 0 : ruas.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cidade other = (Cidade) obj;
+		if (bairros == null) {
+			if (other.bairros != null)
+				return false;
+		} else if (!bairros.equals(other.bairros))
+			return false;
+		if (cep != other.cep)
+			return false;
+		if (mapa == null) {
+			if (other.mapa != null)
+				return false;
+		} else if (!mapa.equals(other.mapa))
+			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		if (ruas == null) {
+			if (other.ruas != null)
+				return false;
+		} else if (!ruas.equals(other.ruas))
+			return false;
+		return true;
+	}
+
 }
