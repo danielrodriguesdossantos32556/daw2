@@ -1,7 +1,6 @@
 package dao;
 
 import java.awt.List;
-
 import entities.Bairros;
 
 public class BairrosDAO extends DAO<Bairros> {

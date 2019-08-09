@@ -9,8 +9,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
-import idenuncia.Identificavel;
-
 @Entity
 public class Bairros implements Identificavel {
 	@Id
