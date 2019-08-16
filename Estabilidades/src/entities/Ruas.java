@@ -10,8 +10,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import idenuncia.Identificavel;
-
 @Entity
 @Table(name = "ruas")
 public class Ruas implements Identificavel {

@@ -5,8 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import idenuncia.Identificavel;
-
 @Entity
 @Table(name = "estabilidade")
 public class Estabilidade implements Identificavel {
@@ -74,6 +72,6 @@ public class Estabilidade implements Identificavel {
 	@Override
 	public void setId(Long id) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

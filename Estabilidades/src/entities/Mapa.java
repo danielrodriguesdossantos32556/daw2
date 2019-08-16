@@ -5,11 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import idenuncia.Identificavel;
-
 @Entity
 @Table(name = "Mapa")
-public class Mapa implements Identificavel{
+public class Mapa implements Identificavel {
 	@Id
 	@GeneratedValue
 	private int id_mapa;
@@ -58,7 +56,7 @@ public class Mapa implements Identificavel{
 	@Override
 	public void setId(Long id) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

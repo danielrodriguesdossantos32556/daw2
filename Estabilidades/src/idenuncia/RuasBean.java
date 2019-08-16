@@ -28,7 +28,7 @@ public class RuasBean implements Serializable {
 	@PostConstruct
 	public void init() {
 		entidade = newEntidade();
-		entidades = getService().getAll();
+		entidades = (Collection<Ruas>) getService().getAll();
 	}
 
 	public void remove(Ruas entidade) {
@@ -63,7 +63,7 @@ public class RuasBean implements Serializable {
 	}
 
 	public void limpar() {
-		entidades = getService().getAll();
+		entidades = (Collection<Ruas>) getService().getAll();
 		entidade = newEntidade();
 	}
 

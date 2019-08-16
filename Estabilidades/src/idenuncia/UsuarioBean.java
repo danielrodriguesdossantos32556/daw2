@@ -29,7 +29,7 @@ public class UsuarioBean implements Serializable {
 	@PostConstruct
 	public void init() {
 		entidade = newEntidade();
-		entidades = getService().getAll();
+		entidades = (Collection<Usuario>) getService().getAll();
 	}
 
 	public void remove(Usuario entidade) {
@@ -64,7 +64,7 @@ public class UsuarioBean implements Serializable {
 	}
 
 	public void limpar() {
-		entidades = getService().getAll();
+		entidades = (Collection<Usuario>) getService().getAll();
 		entidade = newEntidade();
 	}
 

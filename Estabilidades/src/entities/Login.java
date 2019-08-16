@@ -5,8 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import idenuncia.Identificavel;
-
 @Entity
 @Table(name = "login")
 public class Login implements Identificavel {

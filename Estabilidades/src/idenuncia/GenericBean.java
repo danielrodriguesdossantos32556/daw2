@@ -2,14 +2,15 @@ package idenuncia;
 
 import java.io.Serializable;
 import java.util.Collection;
-
 import javax.inject.Inject;
 
 public class GenericBean<E extends Indentificavel> implements Seriaçizable {
 	
-	protected E entidades;
+	protected E entidades1;
 	
 	protected Collection<E> entidades;
+
+	private E entidade;
 	
 
 	public GenericBean() {
@@ -17,8 +18,8 @@ public class GenericBean<E extends Indentificavel> implements Seriaçizable {
 	}
 	
 	private void init() {
-		entidade = newEntidade();
-		entidades = getService().getAll();
+		E entidade = newEntidade();
+		entidades1 = getService().getAll();
 	}
 	
 	public void remove(E entidade) {
@@ -28,7 +29,7 @@ public class GenericBean<E extends Indentificavel> implements Seriaçizable {
 
 	
 	public E getEntidade() {
-		return entidade;
+		return getEntidade();
 	}
 
 	public void setEntidade(E entidade) {
@@ -36,11 +37,11 @@ public class GenericBean<E extends Indentificavel> implements Seriaçizable {
 	}
 
 	public Collection<E> getEntidades() {
-		return entidades;
+		return (Collection<E>) entidades1;
 	}
 
 	public void setEntidades(Collection<E> entidades) {
-		this.entidades = entidades;
+		this.entidades1 = (E) entidades;
 	}
 
 	
@@ -52,18 +53,22 @@ public class GenericBean<E extends Indentificavel> implements Seriaçizable {
 	
 	
 	public void editar(Long id) {
-		this.getEntidade().setId(id);
+		((Object) this.getEntidade()).setId(id);
 		save();
 	}
 	
 	public void limpar() {
-		entidades = getService().getAll();
+		entidades1 = getService().getAll();
 		entidade = newEntidade();
 	}
 	
-	public abstract Service<E> getService();
+	public Service<E> getService() {
+		return null;
+	}
 	
-	protected abstract E newEntidade();
+	protected E newEntidade() {
+		return null;
+	}
 	
 }
 	

@@ -28,7 +28,7 @@ public class EstabilidadeBean implements Serializable {
 	@PostConstruct
 	public void init() {
 		entidade = newEntidade();
-		entidades = getService().getAll();
+		entidades = (Collection<Estabilidade>) getService().getAll();
 	}
 
 	public void remove(Estabilidade entidade) {
@@ -63,7 +63,7 @@ public class EstabilidadeBean implements Serializable {
 	}
 
 	public void limpar() {
-		entidades = getService().getAll();
+		entidades = (Collection<Estabilidade>) getService().getAll();
 		entidade = newEntidade();
 	}
 

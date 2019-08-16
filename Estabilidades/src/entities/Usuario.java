@@ -12,9 +12,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.xml.crypto.Data;
 
-import idenuncia.Identificavel;
-import interfaces.ProjEstabilidade;
-
 @Entity
 @Table(name = "usuario")
 public class Usuario implements Identificavel {

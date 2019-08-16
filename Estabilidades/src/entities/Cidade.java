@@ -10,8 +10,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import idenuncia.Identificavel;
-
 @Entity
 @Table(name = "cidade")
 public class Cidade implements Identificavel {

@@ -28,7 +28,7 @@ public class CadastroBean implements Serializable {
 	@PostConstruct
 	public void init() {
 		entidade = newEntidade();
-		entidades = getService().getAll();
+		entidades = (Collection<Cadastro>) getService().getAll();
 	}
 
 	public void remove(Cadastro entidade) {
@@ -63,7 +63,7 @@ public class CadastroBean implements Serializable {
 	}
 
 	public void limpar() {
-		entidades = getService().getAll();
+		entidades = (Collection<Cadastro>) getService().getAll();
 		entidade = newEntidade();
 	}
 

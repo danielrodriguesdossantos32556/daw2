@@ -28,7 +28,7 @@ public class DenunciasBean implements Serializable {
 	@PostConstruct
 	public void init() {
 		entidade = newEntidade();
-		entidades = getService().getAll();
+		entidades = (Collection<Denuncias>) getService().getAll();
 	}
 
 	public void remove(Denuncias entidade) {
@@ -63,12 +63,12 @@ public class DenunciasBean implements Serializable {
 	}
 
 	public void limpar() {
-		entidades = getService().getAll();
+		entidades = (Collection<Denuncias>) getService().getAll();
 		entidade = newEntidade();
 	}
 
 	protected Denuncias newEntidade() {
-		return new Denuncias();
+		return new Denuncias(0, null, null, null);
 	}
 
 	public DenunciasService getService() {

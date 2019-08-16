@@ -28,7 +28,7 @@ public class CidadeBean implements Serializable {
 	@PostConstruct
 	public void init() {
 		entidade = newEntidade();
-		entidades = getService().getAll();
+		entidades = (Collection<Cidade>) getService().getAll();
 	}
 
 	public void remove(Cidade entidade) {
@@ -63,7 +63,7 @@ public class CidadeBean implements Serializable {
 	}
 
 	public void limpar() {
-		entidades = getService().getAll();
+		entidades = (Collection<Cidade>) getService().getAll();
 		entidade = newEntidade();
 	}
 

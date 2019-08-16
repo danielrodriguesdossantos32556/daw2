@@ -11,8 +11,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import idenuncia.Identificavel;
-
 @Entity
 @Table(name = "Denuncias")
 public class Denuncias implements Identificavel {
@@ -27,8 +25,6 @@ public class Denuncias implements Identificavel {
 	@ManyToMany
 	@JoinTable(name = "Bairros", joinColumns = @JoinColumn(name = "id_bairros"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
 	private ArrayList<Bairros> denuncias_bairros;
-
-	// ----------------------------------------------------//
 
 	public int getId_denuncias() {
 		return id_denuncias;

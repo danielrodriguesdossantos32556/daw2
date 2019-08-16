@@ -28,7 +28,7 @@ public class MapaBean implements Serializable {
 	@PostConstruct
 	public void init() {
 		entidade = newEntidade();
-		entidades = getService().getAll();
+		entidades = (Collection<Mapa>) getService().getAll();
 	}
 
 	public void remove(Mapa entidade) {
@@ -63,7 +63,7 @@ public class MapaBean implements Serializable {
 	}
 
 	public void limpar() {
-		entidades = getService().getAll();
+		entidades = (Collection<Mapa>) getService().getAll();
 		entidade = newEntidade();
 	}
 
