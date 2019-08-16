@@ -30,7 +30,7 @@ public class TesteProjeto {
 		Cidade cidade = new Cidade();
 		Cidade c = e.criarCidade(cidade);
 		asserNotNull(c);
-		asserEquals("Teste de criação", c.getId());
+		assertEquals("Teste de criação", c.getId());
 
 	}
 
