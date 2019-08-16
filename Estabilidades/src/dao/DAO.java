@@ -2,7 +2,7 @@ package dao;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import idenuncia.Identificavel;
+import entities.Identificavel;
 
 public class DAO<E extends Identificavel> {
 	
