@@ -10,7 +10,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 @Entity
-public class Bairros implements Identificavel {
+public class Bairros extends Identificavel {
 	@Id
 	@GeneratedValue
 	private Long id;

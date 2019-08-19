@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "cadastro")
-public class Cadastro implements Identificavel {
+public class Cadastro extends Identificavel {
 	@Id
 	@GeneratedValue
 	private long id_cadastro;

@@ -81,5 +81,11 @@ public class EstabilidadeService implements Serializable, Service<Estabilidade> 
 	public List<Estabilidade> getAll() {
 		return estabilidadeDAO.getAll();
 	}
+
+	@Override
+	public java.util.List<Estabilidade> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
 

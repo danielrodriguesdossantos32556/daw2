@@ -70,6 +70,7 @@ public class BairrosService implements Serializable, Service<Bairros> {
 	 */
 	@Override
 	public Bairros getByID(long bairros) {
+		Object bairrosId = null;
 		return bairrosDAO.getById(bairrosId);
 	}
 
@@ -81,12 +82,6 @@ public class BairrosService implements Serializable, Service<Bairros> {
 	@Override
 	public List<Bairros> getAll() {
 		return bairrosDAO.getAll();
-	}
-
-	@Override
-	public void save(Cadastro cadastro) {
-		// TODO Auto-generated method stub
-		
 	}
 	
 }

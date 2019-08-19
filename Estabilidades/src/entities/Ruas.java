@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "ruas")
-public class Ruas implements Identificavel {
+public class Ruas extends Identificavel {
 	@Id
 	@GeneratedValue
 	private int id_ruas;

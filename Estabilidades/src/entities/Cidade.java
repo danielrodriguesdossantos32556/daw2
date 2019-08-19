@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "cidade")
-public class Cidade implements Identificavel {
+public class Cidade extends Identificavel {
 
 	private int cep;
 

@@ -11,7 +11,7 @@ import javax.inject.Named;
 import entities.Cadastro;
 import services.CadastroService;
 
-@ViewScoped
+@ViewScoped 
 @Named
 public class CadastroBean implements Serializable {
 

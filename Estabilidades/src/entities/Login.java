@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "login")
-public class Login implements Identificavel {
+public class Login extends Identificavel {
 	@Id
 	@GeneratedValue
 	private int id_login;

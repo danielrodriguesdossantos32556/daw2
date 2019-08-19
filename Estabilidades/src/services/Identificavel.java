@@ -1,6 +1,7 @@
-package entities;
+package services;
 
 public class Identificavel {
+	
 	Long getId() {
 		return null;
 	}

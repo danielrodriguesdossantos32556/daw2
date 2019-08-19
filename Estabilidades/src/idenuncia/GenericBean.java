@@ -4,7 +4,9 @@ import java.io.Serializable;
 import java.util.Collection;
 import javax.inject.Inject;
 
-public class GenericBean<E extends Indentificavel> implements Seriaçizable {
+import entities.Identificavel;
+
+public class GenericBean<E extends Identificavel> implements Serializable {
 	
 	protected E entidades1;
 	

@@ -8,7 +8,7 @@ import javax.inject.Inject;
 
 import dao.CadastroDAO;
 import entities.Cadastro;
-import idenuncia.Identificavel;
+import entities.Identificavel;
 import util.TransacionalCdi;
 
 @ApplicationScoped
@@ -31,7 +31,7 @@ public class CadastroService implements Serializable, Service<Identificavel> {
 	 */
 	@TransacionalCdi
 	public void save(Cadastro cadastro) {
-		CadastroDAO.save(cadastro);
+		cadastroDAO.save(cadastro);
 	}
 
 	/*
@@ -83,6 +83,18 @@ public class CadastroService implements Serializable, Service<Identificavel> {
 	}
 
 	@Override
+	public Identificavel getByID(long userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public java.util.List<Identificavel> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
 	public void save(Identificavel e) {
 		// TODO Auto-generated method stub
 		
@@ -98,17 +110,5 @@ public class CadastroService implements Serializable, Service<Identificavel> {
 	public void remove(Identificavel e) {
 		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public Identificavel getByID(long userId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public java.util.List<Identificavel> getAll() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

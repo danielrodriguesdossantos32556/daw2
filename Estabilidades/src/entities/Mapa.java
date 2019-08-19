@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Mapa")
-public class Mapa implements Identificavel {
+public class Mapa extends Identificavel {
 	@Id
 	@GeneratedValue
 	private int id_mapa;

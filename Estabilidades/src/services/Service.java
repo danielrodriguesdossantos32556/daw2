@@ -2,8 +2,8 @@ package services;
 
 import java.util.List;
 
-import entities.Cadastro;  
-import idenuncia.Identificavel;
+import entities.Cadastro;
+import entities.Identificavel;  
 
 public interface Service<E extends Identificavel> {
 
@@ -16,7 +16,5 @@ public interface Service<E extends Identificavel> {
 	E getByID(long userId);
 
 	List<E> getAll();
-
-	void save(Cadastro cadastro);
 
 }

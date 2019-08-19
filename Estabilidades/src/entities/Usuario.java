@@ -14,7 +14,7 @@ import javax.xml.crypto.Data;
 
 @Entity
 @Table(name = "usuario")
-public class Usuario implements Identificavel {
+public class Usuario extends Identificavel {
 
 	@Id
 	@GeneratedValue

@@ -13,4 +13,14 @@ public class BairrosDAO extends DAO<Bairros> {
 		return null;
 	}
 
+	public Bairros getById(Object bairrosId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public java.util.List<Bairros> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
