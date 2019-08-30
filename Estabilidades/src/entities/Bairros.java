@@ -5,12 +5,10 @@ import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 @Entity
-public class Bairros extends Identificavel {
+public class Bairros implements Identificavel {
 	@Id
 	@GeneratedValue
 	private Long id;

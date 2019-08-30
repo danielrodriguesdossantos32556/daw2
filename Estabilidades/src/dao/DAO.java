@@ -1,43 +1,51 @@
 package dao;
+import java.util.List;
+
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.Query;
+
 import entities.Identificavel;
 
-public class DAO<E extends Identificavel> {
-	
-	private EntityManagerFactory factory = Persistence.createEntityManagerFactory("academico");
-	
-	public void save(E e) {
-		EntityManager em = factory.createEntityManager();
-		em.getTransaction().begin();
-		em.persist(e);
-		em.getTransaction().commit();
-		em.close();
+@ApplicationScoped
+public abstract class DAO<E extends Identificavel> {
+
+	@Inject
+	private EntityManager em;
+
+	private Class<E> classe;
+
+	public DAO(Class<E> classe) {
+		this.classe = classe;
 	}
 
-	public void update(E e) { 
-		EntityManager em = factory.createEntityManager();
-		em.getTransaction().begin();
-		em.merge(e);
-		em.getTransaction().commit();
-		em.close();
+	public void save(E obj) {
+		if(obj.getId() == null) {
+			em.persist(obj);
+		} else {
+			update(obj);
+		}
 	}
 
-	public void remove(E e) {
-		EntityManager em = factory.createEntityManager();
-		em.getTransaction().begin();
-		em.remove(e);
-		em.getTransaction().commit();
-		em.close();
+	public E update(E obj) {
+		E resultado = obj;
+		resultado = em.merge(obj);
+		return resultado;
 	}
 
-	public E find(Class<E> classe, Long id) {
-		EntityManager em = factory.createEntityManager();
-		E e = em.find(classe, id);
-		em.close();
-		return e;
+	public void remove(E obj) {
+		obj = getByID(obj.getId());
+		em.remove(obj);
 	}
-	
+
+	public E getByID(Long objId) {
+		return em.find(classe, objId);
+	}
+
+	public List<E> getAll() {
+		Query query = em.createQuery("from " + classe.getSimpleName());
+		return query.getResultList();
+	}
+
 }
-

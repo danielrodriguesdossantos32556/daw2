@@ -7,29 +7,24 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Mapa")
-public class Mapa extends Identificavel {
+public class Mapa implements Identificavel {
 	@Id
 	@GeneratedValue
-	private int id_mapa;
+	private Long id;
 
-	public int getId_mapa() {
-		return id_mapa;
+	public Long getId() {
+		return id;
 	}
 
-	public void setId_mapa(int id_mapa) {
-		this.id_mapa = id_mapa;
-	}
-
-	@Override
-	public String toString() {
-		return "Mapa [id_mapa=" + id_mapa + "]";
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + id_mapa;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 
@@ -42,21 +37,14 @@ public class Mapa extends Identificavel {
 		if (getClass() != obj.getClass())
 			return false;
 		Mapa other = (Mapa) obj;
-		if (id_mapa != other.id_mapa)
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}
 
-	@Override
-	public Long getId() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public void setId(Long id) {
-		// TODO Auto-generated method stub
-
-	}
 
 }

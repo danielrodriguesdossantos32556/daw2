@@ -1,10 +1,8 @@
 package entities;
 
-public class Identificavel {
-	Long getId() {
-		return null;
-	}
-
-	void setId(Long id) {
-	}
+public interface Identificavel {
+	Long getId(); 
+		
+	void setId(Long id); 
+	
 }

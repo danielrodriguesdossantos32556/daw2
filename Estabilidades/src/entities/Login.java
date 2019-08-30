@@ -7,21 +7,21 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "login")
-public class Login extends Identificavel {
+public class Login implements Identificavel {
 	@Id
 	@GeneratedValue
-	private int id_login;
+	private Long id;
 
 	private String senha_usuario;
 
 	private String nickName_usuario;
 
-	public int getId_login() {
-		return id_login;
+	public Long getId() {
+		return id;
 	}
 
-	public void setId_login(int id_login) {
-		this.id_login = id_login;
+	public void setId(Long id_login) {
+		this.id = id_login;
 	}
 
 	public String getSenha_usuario() {
@@ -42,18 +42,18 @@ public class Login extends Identificavel {
 
 	@Override
 	public String toString() {
-		return "Login [id_login=" + id_login + ", senha_usuario=" + senha_usuario + ", nickName_usuario="
+		return "Login [id_login=" + id + ", senha_usuario=" + senha_usuario + ", nickName_usuario="
 				+ nickName_usuario + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
-		int result = 1;
-		result = prime * result + id_login;
+		long result = 1;
+		result = prime * result + id;
 		result = prime * result + ((nickName_usuario == null) ? 0 : nickName_usuario.hashCode());
 		result = prime * result + ((senha_usuario == null) ? 0 : senha_usuario.hashCode());
-		return result;
+		return (int)result;
 	}
 
 	@Override
@@ -65,7 +65,7 @@ public class Login extends Identificavel {
 		if (getClass() != obj.getClass())
 			return false;
 		Login other = (Login) obj;
-		if (id_login != other.id_login)
+		if (id != other.id)
 			return false;
 		if (nickName_usuario == null) {
 			if (other.nickName_usuario != null)
@@ -80,15 +80,4 @@ public class Login extends Identificavel {
 		return true;
 	}
 
-	@Override
-	public Long getId() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setId(Long id) {
-		// TODO Auto-generated method stub
-		
-	}
 }

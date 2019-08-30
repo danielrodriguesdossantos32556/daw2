@@ -1,7 +1,6 @@
 package entities;
 
-import java.awt.List;
-import java.util.ArrayList;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -12,9 +11,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "cidade")
-public class Cidade extends Identificavel {
+public class Cidade implements Identificavel {
 
-	private int cep;
+	private Long id;
 
 	private String nome;
 	@OneToOne
@@ -22,91 +21,51 @@ public class Cidade extends Identificavel {
 	private Mapa mapa;
 	@ManyToMany
 	@JoinTable(name = "Ruas", joinColumns = @JoinColumn(name = "cep"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
-	private ArrayList<Ruas> ruas;
+	private Set<Ruas> ruas;
 	@ManyToMany
 	@JoinTable(name = "Bairros", joinColumns = @JoinColumn(name = "id_bairros"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
-	private ArrayList<Bairros> bairros;
-
-	public int getCep() {
-		return cep;
+	private Set<Bairros> bairros;
+	public Long getId() {
+		return id;
 	}
-
-	public void setCep(int cep) {
-		this.cep = cep;
+	public void setId(Long id) {
+		this.id = id;
 	}
-
 	public String getNome() {
 		return nome;
 	}
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
 	public Mapa getMapa() {
 		return mapa;
 	}
-
 	public void setMapa(Mapa mapa) {
 		this.mapa = mapa;
 	}
-
-	public ArrayList<Ruas> getRuas() {
+	public Set<Ruas> getRuas() {
 		return ruas;
 	}
-
-	public void setRuas(ArrayList<Ruas> ruas) {
+	public void setRuas(Set<Ruas> ruas) {
 		this.ruas = ruas;
 	}
-
-	public ArrayList<Bairros> getBairros() {
+	public Set<Bairros> getBairros() {
 		return bairros;
 	}
-
-	public void setBairros(ArrayList<Bairros> bairros) {
+	public void setBairros(Set<Bairros> bairros) {
 		this.bairros = bairros;
 	}
-
-	public Object getCidade() {
-		return getCidade();
-	}
-
-	public Cidade getByID(long cidade) {
-		return getByID(cidade);
-	}
-
-	public List getAll() {
-		return getAll();
-	}
-
-	@Override
-	public Long getId() {
-		return getId();
-	}
-
-	@Override
-	public void setId(Long id) {
-
-	}
-
-	@Override
-	public String toString() {
-		return "Cidade [cep=" + cep + ", nome=" + nome + ", mapa=" + mapa + ", ruas=" + ruas + ", bairros=" + bairros
-				+ "]";
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((bairros == null) ? 0 : bairros.hashCode());
-		result = prime * result + cep;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((mapa == null) ? 0 : mapa.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + ((ruas == null) ? 0 : ruas.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -121,7 +80,10 @@ public class Cidade extends Identificavel {
 				return false;
 		} else if (!bairros.equals(other.bairros))
 			return false;
-		if (cep != other.cep)
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
 			return false;
 		if (mapa == null) {
 			if (other.mapa != null)
@@ -140,5 +102,12 @@ public class Cidade extends Identificavel {
 			return false;
 		return true;
 	}
+	@Override
+	public String toString() {
+		return "Cidade [id=" + id + ", nome=" + nome + ", mapa=" + mapa + ", ruas=" + ruas + ", bairros=" + bairros
+				+ "]";
+	}
+
+	
 
 }

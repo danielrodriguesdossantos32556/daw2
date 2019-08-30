@@ -3,7 +3,7 @@ package dao;
 import java.awt.List;
 import entities.Login;
 
-public class LoginDao extends DAO<Login> {
+public class LoginDao implements DAO<Login> {
 
 	public LoginDao() {
 		super();

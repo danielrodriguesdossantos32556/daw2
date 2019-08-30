@@ -1,66 +1,26 @@
 package entities;
 
-import java.util.ArrayList;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "ruas")
-public class Ruas extends Identificavel {
+public class Ruas implements Identificavel {
 	@Id
 	@GeneratedValue
-	private int id_ruas;
+	private Long id;
 
 	private String nome_ruas;
+	
 
-	@ManyToMany
-	@JoinTable(name = "Estabilidade", joinColumns = @JoinColumn(name = "IDC"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + id_ruas;
-		result = prime * result + ((nome_ruas == null) ? 0 : nome_ruas.hashCode());
-		return result;
+	public Long getId() {
+		return id;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Ruas other = (Ruas) obj;
-		if (id_ruas != other.id_ruas)
-			return false;
-		if (nome_ruas == null) {
-			if (other.nome_ruas != null)
-				return false;
-		} else if (!nome_ruas.equals(other.nome_ruas))
-			return false;
-		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "Ruas [id_ruas=" + id_ruas + ", nome_ruas=" + nome_ruas + "]";
-	}
-
-	public int getId_ruas() {
-		return id_ruas;
-	}
-
-	public void setId_ruas(int id_ruas) {
-		this.id_ruas = id_ruas;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNome_ruas() {
@@ -72,15 +32,38 @@ public class Ruas extends Identificavel {
 	}
 
 	@Override
-	public Long getId() {
-		// TODO Auto-generated method stub
-		return null;
+	public int hashCode() {
+		final int prime = 31;
+		long result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((nome_ruas == null) ? 0 : nome_ruas.hashCode());
+		return (int)result;
 	}
 
 	@Override
-	public void setId(Long id) {
-		// TODO Auto-generated method stub
-
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Ruas other = (Ruas) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (nome_ruas == null) {
+			if (other.nome_ruas != null)
+				return false;
+		} else if (!nome_ruas.equals(other.nome_ruas))
+			return false;
+		return true;
 	}
+
+	
+
+	
 
 }

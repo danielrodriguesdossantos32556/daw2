@@ -64,12 +64,9 @@ public class DenunciasBean implements Serializable {
 
 	public void limpar() {
 		entidades = (Collection<Denuncias>) getService().getAll();
-		entidade = newEntidade();
+		entidade = NewEntidade();
 	}
 
-	protected Denuncias newEntidade() {
-		return new Denuncias(0, null, null, null);
-	}
 
 	public DenunciasService getService() {
 		return service;

@@ -14,12 +14,12 @@ import javax.xml.crypto.Data;
 
 @Entity
 @Table(name = "usuario")
-public class Usuario extends Identificavel {
+public class Usuario implements Identificavel {
 
 	@Id
 	@GeneratedValue
 	@Column(name = "Id_usuario")
-	private int id_Usuario;
+	private Long id;
 
 	private String nova_senha;
 	private String novo_nickname;
@@ -31,12 +31,12 @@ public class Usuario extends Identificavel {
 	@JoinTable(name = " denuncias", joinColumns = @JoinColumn(name = "id_denuncias"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
 	private ArrayList<Denuncias> faz_denuncias;
 
-	public int getId_Usuario() {
-		return id_Usuario;
+	public Long getId() {
+		return id;
 	}
 
-	public void setId_Usuario(int id_Usuario) {
-		this.id_Usuario = id_Usuario;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNova_senha() {
@@ -79,11 +79,12 @@ public class Usuario extends Identificavel {
 		this.data_de_nascimento = data_de_nascimento;
 	}
 
-	@Override
-	public String toString() {
-		return "Usuario [id_Usuario=" + id_Usuario + ", nova_senha=" + nova_senha + ", novo_nickname=" + novo_nickname
-				+ ", nome_completo=" + nome_completo + ", email=" + email + ", data_de_nascimento=" + data_de_nascimento
-				+ ", faz_denuncias=" + faz_denuncias + "]";
+	public ArrayList<Denuncias> getFaz_denuncias() {
+		return faz_denuncias;
+	}
+
+	public void setFaz_denuncias(ArrayList<Denuncias> faz_denuncias) {
+		this.faz_denuncias = faz_denuncias;
 	}
 
 	@Override
@@ -93,7 +94,7 @@ public class Usuario extends Identificavel {
 		result = prime * result + ((data_de_nascimento == null) ? 0 : data_de_nascimento.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((faz_denuncias == null) ? 0 : faz_denuncias.hashCode());
-		result = prime * result + id_Usuario;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nome_completo == null) ? 0 : nome_completo.hashCode());
 		result = prime * result + ((nova_senha == null) ? 0 : nova_senha.hashCode());
 		result = prime * result + ((novo_nickname == null) ? 0 : novo_nickname.hashCode());
@@ -124,7 +125,10 @@ public class Usuario extends Identificavel {
 				return false;
 		} else if (!faz_denuncias.equals(other.faz_denuncias))
 			return false;
-		if (id_Usuario != other.id_Usuario)
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
 			return false;
 		if (nome_completo == null) {
 			if (other.nome_completo != null)
@@ -145,15 +149,13 @@ public class Usuario extends Identificavel {
 	}
 
 	@Override
-	public Long getId() {
-		// TODO Auto-generated method stub
-		return null;
+	public String toString() {
+		return "Usuario [id=" + id + ", nova_senha=" + nova_senha + ", novo_nickname=" + novo_nickname
+				+ ", nome_completo=" + nome_completo + ", email=" + email + ", data_de_nascimento=" + data_de_nascimento
+				+ ", faz_denuncias=" + faz_denuncias + "]";
 	}
 
-	@Override
-	public void setId(Long id) {
-		// TODO Auto-generated method stub
 
-	}
+
 
 }
