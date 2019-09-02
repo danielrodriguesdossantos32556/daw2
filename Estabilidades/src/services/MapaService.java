@@ -1,6 +1,6 @@
 package services;
 
-import java.awt.List;
+import java.util.List;
 import java.io.Serializable; 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -56,7 +56,7 @@ public class MapaService implements Serializable, Service<Mapa> {
 	@Override
 	@TransacionalCdi
 	public void remove(Mapa mapa) {
-		MapaDAO.remove(mapa);
+		mapaDAO.remove(mapa);
 	}
 
 	/*

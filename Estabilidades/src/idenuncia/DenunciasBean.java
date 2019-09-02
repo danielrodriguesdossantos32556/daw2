@@ -15,6 +15,11 @@ import services.DenunciasService;
 @Named
 public class DenunciasBean implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Inject
 	private DenunciasService service;
 
@@ -27,8 +32,8 @@ public class DenunciasBean implements Serializable {
 
 	@PostConstruct
 	public void init() {
-		entidade = newEntidade();
-		entidades = (Collection<Denuncias>) getService().getAll();
+		entidade = getEntidade();
+		
 	}
 
 	public void remove(Denuncias entidade) {
@@ -63,8 +68,8 @@ public class DenunciasBean implements Serializable {
 	}
 
 	public void limpar() {
-		entidades = (Collection<Denuncias>) getService().getAll();
-		entidade = NewEntidade();
+		
+		entidade = getEntidade();
 	}
 
 

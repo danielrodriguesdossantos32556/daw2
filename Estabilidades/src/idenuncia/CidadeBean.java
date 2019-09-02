@@ -15,6 +15,11 @@ import services.CidadeService;
 @Named
 public class CidadeBean implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Inject
 	private CidadeService service;
 
@@ -28,7 +33,7 @@ public class CidadeBean implements Serializable {
 	@PostConstruct
 	public void init() {
 		entidade = newEntidade();
-		entidades = (Collection<Cidade>) getService().getAll();
+
 	}
 
 	public void remove(Cidade entidade) {
@@ -63,7 +68,7 @@ public class CidadeBean implements Serializable {
 	}
 
 	public void limpar() {
-		entidades = (Collection<Cidade>) getService().getAll();
+
 		entidade = newEntidade();
 	}
 

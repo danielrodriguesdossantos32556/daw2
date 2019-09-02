@@ -15,6 +15,11 @@ import services.LoginService;
 @Named
 public class LoginBean implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Inject
 	private LoginService service;
 

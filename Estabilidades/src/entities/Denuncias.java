@@ -94,6 +94,7 @@ public class Denuncias implements Identificavel {
 		return "Denuncias [id=" + id + ", denuncias=" + denuncias + ", denuncias_ruas=" + denuncias_ruas
 				+ ", denuncias_bairros=" + denuncias_bairros + "]";
 	}
+	
 
 	
 

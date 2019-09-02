@@ -2,26 +2,28 @@ package idenuncia;
 
 import java.io.Serializable;
 import java.util.Collection;
-import javax.inject.Inject;
 
 import entities.Identificavel;
+import services.Service;
 
-public class GenericBean<E extends Identificavel> implements Serializable {
-	
-	protected E entidades1;
+public abstract class GenericBean<E extends Identificavel> implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	protected E entidade;
 	
 	protected Collection<E> entidades;
-
-	private E entidade;
 	
-
 	public GenericBean() {
 		init();
 	}
 	
 	private void init() {
-		E entidade = newEntidade();
-		entidades1 = getService().getAll();
+		entidade = newEntidade();
+		entidades = getService().getAll();
 	}
 	
 	public void remove(E entidade) {
@@ -31,7 +33,7 @@ public class GenericBean<E extends Identificavel> implements Serializable {
 
 	
 	public E getEntidade() {
-		return getEntidade();
+		return entidade;
 	}
 
 	public void setEntidade(E entidade) {
@@ -39,11 +41,11 @@ public class GenericBean<E extends Identificavel> implements Serializable {
 	}
 
 	public Collection<E> getEntidades() {
-		return (Collection<E>) entidades1;
+		return entidades;
 	}
 
 	public void setEntidades(Collection<E> entidades) {
-		this.entidades1 = (E) entidades;
+		this.entidades = entidades;
 	}
 
 	
@@ -55,22 +57,18 @@ public class GenericBean<E extends Identificavel> implements Serializable {
 	
 	
 	public void editar(Long id) {
-		((Object) this.getEntidade()).setId(id);
+		this.getEntidade().setId(id);
 		save();
 	}
 	
 	public void limpar() {
-		entidades1 = getService().getAll();
+		entidades = getService().getAll();
 		entidade = newEntidade();
 	}
 	
-	public Service<E> getService() {
-		return null;
-	}
+	public abstract Service<E> getService();
 	
-	protected E newEntidade() {
-		return null;
-	}
+	protected abstract E newEntidade();
 	
 }
 	

@@ -15,6 +15,11 @@ import services.MapaService;
 @Named
 public class MapaBean implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Inject
 	private MapaService service;
 

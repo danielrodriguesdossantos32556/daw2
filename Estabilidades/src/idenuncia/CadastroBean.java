@@ -15,6 +15,11 @@ import services.CadastroService;
 @Named
 public class CadastroBean implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Inject
 	private CadastroService service;
 
@@ -28,7 +33,7 @@ public class CadastroBean implements Serializable {
 	@PostConstruct
 	public void init() {
 		entidade = newEntidade();
-		entidades = (Collection<Cadastro>) getService().getAll();
+		
 	}
 
 	public void remove(Cadastro entidade) {
@@ -63,7 +68,7 @@ public class CadastroBean implements Serializable {
 	}
 
 	public void limpar() {
-		entidades = (Collection<Cadastro>) getService().getAll();
+		
 		entidade = newEntidade();
 	}
 

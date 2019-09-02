@@ -4,10 +4,10 @@ import java.awt.List;
 
 import entities.Usuario;
 
-public class UsuarioDAO implements DAO<Usuario> {
+public class UsuarioDAO extends DAO<Usuario> {
 
 	public UsuarioDAO() {
-		super();
+		super(Usuario.class);
 	}
 
 	public List findBy(Usuario filtro) {

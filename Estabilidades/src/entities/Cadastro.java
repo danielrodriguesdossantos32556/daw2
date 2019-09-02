@@ -51,5 +51,4 @@ public class Cadastro implements Identificavel {
 	}
 
 
-
 }

@@ -3,10 +3,10 @@ package dao;
 import java.util.List;
 import entities.Bairros;
 
-public class BairrosDAO implements DAO<Bairros> {
+public class BairrosDAO extends DAO<Bairros> {
 
 	public BairrosDAO() {
-		super();
+		super(Bairros.class);
 	}
 
 	public List<BairrosDAO> findBy(Bairros filtro) {

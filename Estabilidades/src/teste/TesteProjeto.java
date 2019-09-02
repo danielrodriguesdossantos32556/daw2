@@ -88,33 +88,5 @@ public class TesteProjeto {
 		assertEquals(" Teste ", r.getId());
 	}
 
-	private void asserNotNull(Ruas r) {
-		// TODO Auto-generated method stub
-	}
 
-	private void asserNotNull(Log l) {
-		// TODO Auto-generated method stub
-	}
-
-	private void asserNotNull(Estabilidade e1) {
-		// TODO Auto-generated method stub
-	}
-
-	private void asserNotNull(Denuncias d) {
-		// TODO Auto-generated method stub
-	}
-
-	private void asserNotNull(Cadastro c) {
-		// TODO Auto-generated method stub
-
-	}
-
-	private void asserNotNull(Bairros b) {
-		// TODO Auto-generated method stub
-	}
-
-	private void asserNotNull(Cidade c) {
-		// TODO Auto-generated method stub
-
-	}
 }

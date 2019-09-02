@@ -7,7 +7,7 @@ import entities.Ruas;
 public class RuasDAO extends DAO<Ruas> {
 
 	public RuasDAO() {
-		super();
+		super(Ruas.class);
 	}
 
 	public List findBy(Ruas filtro) {

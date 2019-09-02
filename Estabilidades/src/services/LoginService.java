@@ -1,12 +1,12 @@
 package services;
 
-import java.awt.List; 
+import java.util.List; 
 import java.io.Serializable;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import dao.LoginDAO;
+import dao.LoginDao;
 import entities.Login;
 import util.TransacionalCdi;
 
@@ -19,7 +19,7 @@ public class LoginService implements Serializable, Service<Login> {
 	private static final long serialVersionUID = -7803325791425670859L;
 
 	@Inject
-	private LoginDAO loginDAO;
+	private LoginDao loginDAO;
 
 	/*
 	 * (non-Javadoc)
@@ -57,7 +57,7 @@ public class LoginService implements Serializable, Service<Login> {
 	@Override
 	@TransacionalCdi
 	public void remove(Login login) {
-		LoginDAO.remove(login);
+		loginDAO.remove(login);
 	}
 
 	/*

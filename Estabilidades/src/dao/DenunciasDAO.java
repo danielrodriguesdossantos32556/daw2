@@ -4,10 +4,10 @@ import java.awt.List;
 
 import entities.Denuncias;
 
-public class DenunciasDAO implements DAO<Denuncias> {
+public class DenunciasDAO extends DAO<Denuncias> {
 
 	public DenunciasDAO() {
-		super();
+		super(Denuncias.class);
 	}
 
 	public List findBy(Denuncias filtro) {

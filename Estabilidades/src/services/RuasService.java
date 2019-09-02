@@ -1,6 +1,6 @@
 package services;
 
-import java.awt.List; 
+import java.util.List; 
 import java.io.Serializable;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -45,7 +45,7 @@ import util.TransacionalCdi;
 		@Override
 		@TransacionalCdi
 		public void remove(Ruas ruas) {
-			RuasDAO.remove(ruas);
+			ruasDAO.remove(ruas);
 		}
 		
 		/* (non-Javadoc)

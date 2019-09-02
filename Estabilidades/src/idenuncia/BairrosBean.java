@@ -15,6 +15,11 @@ import services.BairrosService;
 @Named
 public class BairrosBean implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Inject
 	private BairrosService service;
 

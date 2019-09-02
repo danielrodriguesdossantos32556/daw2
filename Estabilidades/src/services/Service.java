@@ -2,7 +2,6 @@ package services;
 
 import java.util.List;
 
-import entities.Cadastro;
 import entities.Identificavel;  
 
 public interface Service<E extends Identificavel> {

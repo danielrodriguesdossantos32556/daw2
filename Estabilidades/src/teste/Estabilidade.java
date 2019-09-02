@@ -1,14 +1,9 @@
 package teste;
 
-import java.util.ArrayList;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.sound.sampled.Clip;
-
-import sun.rmi.runtime.Log;
 
 @Entity
 @Table(name = "estabilidade")
