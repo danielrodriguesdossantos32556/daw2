@@ -23,6 +23,18 @@ public class TesteProjeto {
 
 	private int id;
 	private String String;
+	public String getString() {
+		return String;
+	}
+	public void setString(String string) {
+		String = string;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 
 //	@Test
 //	void criarCidade() {
