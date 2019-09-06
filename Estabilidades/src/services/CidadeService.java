@@ -6,8 +6,8 @@ import java.io.Serializable;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
+import dao.CidadeDAO;
 import entities.Cidade;
-import entities.Denuncias;
 import util.TransacionalCdi;
 
 @ApplicationScoped
@@ -19,7 +19,7 @@ public class CidadeService implements Serializable, Service<Cidade> {
 	private static final long serialVersionUID = -7803325791425670859L;
 
 	@Inject
-	private Cidade cidadeDAO;
+	private CidadeDAO cidadeDAO;
 
 	/*
 	 * (non-Javadoc)

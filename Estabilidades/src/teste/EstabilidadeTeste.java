@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "estabilidade")
-public class Estabilidade {
+public class EstabilidadeTeste {
 	@Id
 	@GeneratedValue
 	private int IDC;
@@ -30,7 +30,7 @@ public class Estabilidade {
 		this.estabilidade = estabilidade;
 	}
 
-	public Estabilidade(int iDC, String estabilidade) {
+	public EstabilidadeTeste(int iDC, String estabilidade) {
 		super();
 		IDC = iDC;
 		this.estabilidade = estabilidade;

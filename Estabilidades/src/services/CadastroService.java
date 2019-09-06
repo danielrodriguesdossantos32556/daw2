@@ -1,18 +1,15 @@
 package services;
 
-import java.awt.List;
 import java.io.Serializable;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 import dao.CadastroDAO;
 import entities.Cadastro;
-import entities.Identificavel;
 import util.TransacionalCdi;
 
 @ApplicationScoped
-public class CadastroService implements Serializable, Service<Identificavel> {
+public class CadastroService implements Serializable, Service<Cadastro> {
 
 	/**
 	 * 
@@ -69,6 +66,11 @@ public class CadastroService implements Serializable, Service<Identificavel> {
 	@Override
 	public Cadastro getByID(long cadastro) {
 		return cadastroDAO.getByID(cadastro);
+	}
+
+	@Override
+	public java.util.List<Cadastro> getAll() {
+		return cadastroDAO.getAll();
 	}
 
 

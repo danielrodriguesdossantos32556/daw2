@@ -25,36 +25,47 @@ public class Cidade implements Identificavel {
 	@ManyToMany
 	@JoinTable(name = "Bairros", joinColumns = @JoinColumn(name = "id_bairros"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
 	private Set<Bairros> bairros;
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public Mapa getMapa() {
 		return mapa;
 	}
+
 	public void setMapa(Mapa mapa) {
 		this.mapa = mapa;
 	}
+
 	public Set<Ruas> getRuas() {
 		return ruas;
 	}
+
 	public void setRuas(Set<Ruas> ruas) {
 		this.ruas = ruas;
 	}
+
 	public Set<Bairros> getBairros() {
 		return bairros;
 	}
+
 	public void setBairros(Set<Bairros> bairros) {
 		this.bairros = bairros;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -66,6 +77,7 @@ public class Cidade implements Identificavel {
 		result = prime * result + ((ruas == null) ? 0 : ruas.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -102,12 +114,11 @@ public class Cidade implements Identificavel {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "Cidade [id=" + id + ", nome=" + nome + ", mapa=" + mapa + ", ruas=" + ruas + ", bairros=" + bairros
 				+ "]";
 	}
-
-	
 
 }

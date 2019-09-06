@@ -9,6 +9,7 @@ public class EstabilidadeDAO extends DAO<Estabilidade> {
 		super(Estabilidade.class);
 	}
 
+	@SuppressWarnings("rawtypes")
 	public List findBy(Estabilidade filtro) {
 		return null;
 	}

@@ -24,40 +24,50 @@ public class Denuncias implements Identificavel {
 	@ManyToMany
 	@JoinTable(name = "Bairros", joinColumns = @JoinColumn(name = "id_bairros"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
 	private Set<Bairros> denuncias_bairros;
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getDenuncias() {
 		return denuncias;
 	}
+
 	public void setDenuncias(String denuncias) {
 		this.denuncias = denuncias;
 	}
+
 	public Set<Ruas> getDenuncias_ruas() {
 		return denuncias_ruas;
 	}
-	public void setDenuncias_ruas(Set<Ruas> denuncias_ruas) {
-		this.denuncias_ruas = denuncias_ruas;
+
+	public void setDenuncias_ruas(String denuncias) {
+		this.denuncias = denuncias;
 	}
-	public Set<Bairros> getDenuncias_bairros() {
-		return denuncias_bairros;
+
+	public String getDenuncias_bairros() {
+		return denuncias;
 	}
-	public void setDenuncias_bairros(Set<Bairros> denuncias_bairros) {
-		this.denuncias_bairros = denuncias_bairros;
+
+	public void setDenuncias_bairros(Set<Bairros> denuncias) {
+		this.denuncias_bairros = denuncias;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
-		int result = 1;
+		long result = 1;
 		result = prime * result + ((denuncias == null) ? 0 : denuncias.hashCode());
 		result = prime * result + ((denuncias_bairros == null) ? 0 : denuncias_bairros.hashCode());
 		result = prime * result + ((denuncias_ruas == null) ? 0 : denuncias_ruas.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
+		return (int) result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -89,13 +99,11 @@ public class Denuncias implements Identificavel {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "Denuncias [id=" + id + ", denuncias=" + denuncias + ", denuncias_ruas=" + denuncias_ruas
 				+ ", denuncias_bairros=" + denuncias_bairros + "]";
 	}
-	
-
-	
 
 }

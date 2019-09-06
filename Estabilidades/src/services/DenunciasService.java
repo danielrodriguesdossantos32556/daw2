@@ -19,7 +19,7 @@ public class DenunciasService implements Serializable, Service<Denuncias> {
 	private static final long serialVersionUID = -7803325791425670859L;
 
 	@Inject
-	private Denuncias denunciasDAO;
+	private DenunciasDAO denunciasDAO;
 
 	/*
 	 * (non-Javadoc)

@@ -57,7 +57,7 @@ public class EstabilidadeService implements Serializable, Service<Estabilidade> 
 	@Override
 	@TransacionalCdi
 	public void remove(Estabilidade estabilidade) {
-		EstabilidadeDAO.remove(estabilidade);
+		estabilidadeDAO.remove(estabilidade);
 	}
 
 	/*
@@ -82,10 +82,5 @@ public class EstabilidadeService implements Serializable, Service<Estabilidade> 
 		return estabilidadeDAO.getAll();
 	}
 
-	@Override
-	public java.util.List<Estabilidade> getAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }
 

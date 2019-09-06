@@ -2,7 +2,7 @@ package entities;
 
 import java.util.Set;
 
-public class Estabilidade {
+public class Estabilidade implements Identificavel{
 	private Long id;
 	private Set<Estabilidade> estabilidades;
 	public Long getId() {
