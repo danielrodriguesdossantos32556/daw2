@@ -11,7 +11,7 @@ import services.UsuarioService;
 
 public class UsuarioTest {
 	@Test
-	@DisplayName("Teste classe Usuario")
+	
 	public void adicionaCliente() {
 		UsuarioService service = new UsuarioService();
 		Usuario u = new Usuario();

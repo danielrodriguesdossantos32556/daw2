@@ -11,13 +11,13 @@ import services.LoginService;
 
 public class LoginTest {
 	@Test
-	@DisplayName("Teste classe Login")
+	
 	public void adicionaCliente() {
 		LoginService service = new LoginService();
 		Login u = new Login();
 		u.setSenha_usuario("l");
 
-		service.save(l);
+		service.save(u);
 
 		assertNotNull(u.getId());
 

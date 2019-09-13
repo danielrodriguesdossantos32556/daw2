@@ -11,13 +11,12 @@ import services.BairrosService;
 
 public class BairrosTest {
 	@Test
-	@DisplayName("Teste classe Bairros")
 	public void adicionaCliente() {
 		BairrosService service = new BairrosService();
 		Bairros u = new Bairros();
 		u.setNome_bairro("b");
 
-		service.save(b);
+		service.save(u);
 
 		assertNotNull(u.getId());
 
