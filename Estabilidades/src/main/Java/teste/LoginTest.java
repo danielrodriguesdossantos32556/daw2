@@ -14,16 +14,16 @@ public class LoginTest {
 	
 	public void adicionaCliente() {
 		LoginService service = new LoginService();
-		Login u = new Login();
-		u.setSenha_usuario("l");
+		Login l = new Login();
+		l.setSenha_usuario("l");
 
-		service.save(u);
+		service.save(l);
 
-		assertNotNull(u.getId());
+		assertNotNull(l.getId());
 
-		Login l2 = service.getByID(u.getId());
-		assertEquals(u, l2);
-		service.update(u);
+		Login l2 = service.getByID(l.getId());
+		assertEquals(l, l2);
+		service.update(l);
 
 		Login l3 = service.getByID(0);
 		assertEquals("buffet", l3.getSenha_usuario());

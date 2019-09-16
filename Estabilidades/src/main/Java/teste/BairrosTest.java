@@ -13,19 +13,19 @@ public class BairrosTest {
 	@Test
 	public void adicionaCliente() {
 		BairrosService service = new BairrosService();
-		Bairros u = new Bairros();
-		u.setNome_bairro("b");
+		Bairros b = new Bairros();
+		b.setNome_bairro("b");
 
-		service.save(u);
+		service.save(b);
 
-		assertNotNull(u.getId());
+		assertNotNull(b.getId());
 
-		Bairros b2 = service.getByID(u.getId());
-		assertEquals(u, b2);
-		service.update(u);
+		Bairros b2 = service.getByID(b.getId());
+		assertEquals(b, b2);
+		service.update(b);
 
 		Bairros b3 = service.getByID(0);
-		assertEquals("buffet", b3.getNome_bairro());
+		assertEquals("bbffet", b3.getNome_bairro());
 		service.remove(b2);
 
 		Bairros b4 = service.getByID(0);

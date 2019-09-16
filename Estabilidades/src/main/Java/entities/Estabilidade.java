@@ -2,7 +2,13 @@ package entities;
 
 import java.util.Set;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Estabilidade implements Identificavel{
+	
+	@Id
 	private Long id;
 	private Set<Estabilidade> estabilidades;
 	public Long getId() {

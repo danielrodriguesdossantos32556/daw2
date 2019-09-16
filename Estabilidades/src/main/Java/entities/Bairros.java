@@ -1,21 +1,37 @@
 package entities;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Bairros implements Identificavel {
 	@Id
 	@GeneratedValue
 	private Long id;
-
+	
+	@ManyToOne
+	@JoinColumn(name="id_cidade")
+	private Cidade cidade;
+	
 	private String nome_bairro;
 	@ManyToMany
+	@JoinTable(
+			name="bairro_rua",
+			joinColumns = @JoinColumn(name="id_bairro"),
+			inverseJoinColumns = @JoinColumn(name="id_rua")
+	)
 	private ArrayList<Ruas> ruas;
+	
+	@ManyToMany(mappedBy = "denuncias_bairros")
+	private Set<Denuncias> denuncias;
 
 	public Long getId() {
 		return id;

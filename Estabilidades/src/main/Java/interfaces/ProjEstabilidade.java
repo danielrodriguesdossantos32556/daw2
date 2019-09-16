@@ -6,12 +6,11 @@ import javax.xml.crypto.Data;
 
 import dao.EstabilidadeDAO;
 import entities.Bairros;
-import entities.Mapa;
 import entities.Ruas;
 
 public interface ProjEstabilidade {
 	
-	public void Cidade(int cep, String nome, Mapa mapa, ArrayList<Ruas> ruas, ArrayList<Bairros> bairros);
+	public void Cidade(int cep, String nome, ArrayList<Ruas> ruas, ArrayList<Bairros> bairros);
 	
 	
 	public void Bairros(int id_bairro, String nome_bairro, ArrayList<EstabilidadeDAO> estavel, ArrayList<Ruas> ruas);
