@@ -1,6 +1,7 @@
 package entities;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,15 +22,24 @@ public class Usuario implements Identificavel {
 	@Column(name = "Id_usuario")
 	private Long id;
 
+	@Column(name = "usuario_nova_senha")
 	private String nova_senha;
+
+	@Column(name = "usuario_novo_nickname")
 	private String novo_nickname;
+
+	@Column(name = "usuario_nome_completo")
 	private String nome_completo;
+
+	@Column(name = "usuario_email")
 	private String email;
+
+	@Column(name = "usuario_data_de_nascimento")
 	private Data data_de_nascimento;
 
 	@ManyToMany
 	@JoinTable(name = " denuncias", joinColumns = @JoinColumn(name = "id_denuncias"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
-	private ArrayList<Denuncias> faz_denuncias;
+	private Set<Denuncias> faz_denuncias;
 
 	public Long getId() {
 		return id;
@@ -79,11 +89,11 @@ public class Usuario implements Identificavel {
 		this.data_de_nascimento = data_de_nascimento;
 	}
 
-	public ArrayList<Denuncias> getFaz_denuncias() {
+	public Set<Denuncias> getFaz_denuncias() {
 		return faz_denuncias;
 	}
 
-	public void setFaz_denuncias(ArrayList<Denuncias> faz_denuncias) {
+	public void setFaz_denuncias(Set<Denuncias> faz_denuncias) {
 		this.faz_denuncias = faz_denuncias;
 	}
 
@@ -154,8 +164,4 @@ public class Usuario implements Identificavel {
 				+ ", nome_completo=" + nome_completo + ", email=" + email + ", data_de_nascimento=" + data_de_nascimento
 				+ ", faz_denuncias=" + faz_denuncias + "]";
 	}
-
-
-
-
 }

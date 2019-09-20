@@ -2,6 +2,7 @@ package entities;
 
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -13,13 +14,15 @@ import javax.persistence.Table;
 @Table(name = "cidade")
 public class Cidade implements Identificavel {
 
+	@Column(name = "Id_cidade")
 	private Long id;
 
+	@Column(name = "cidade_nome")
 	private String nome;
 	@ManyToMany
-	@JoinTable(name = "Ruas", joinColumns = @JoinColumn(name = "id_cidade"), inverseJoinColumns = @JoinColumn(name = "id_rua"))
+	@JoinTable(name = "ruas", joinColumns = @JoinColumn(name = "id_cidade"), inverseJoinColumns = @JoinColumn(name = "id_rua"))
 	private Set<Ruas> ruas;
-	
+
 	@OneToMany(mappedBy = "cidade")
 	private Set<Bairros> bairros;
 
@@ -39,7 +42,6 @@ public class Cidade implements Identificavel {
 		this.nome = nome;
 	}
 
-	
 	public Set<Ruas> getRuas() {
 		return ruas;
 	}
@@ -86,7 +88,7 @@ public class Cidade implements Identificavel {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		
+
 		if (nome == null) {
 			if (other.nome != null)
 				return false;
@@ -102,8 +104,7 @@ public class Cidade implements Identificavel {
 
 	@Override
 	public String toString() {
-		return "Cidade [id=" + id + ", nome=" + nome + ", ruas=" + ruas + ", bairros=" + bairros
-				+ "]";
+		return "Cidade [id=" + id + ", nome=" + nome + ", ruas=" + ruas + ", bairros=" + bairros + "]";
 	}
 
 }

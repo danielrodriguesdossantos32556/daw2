@@ -4,14 +4,16 @@
 	
 		<class>entities.Usuario</class>
 		<class>entities.Cadastro</class>
-		<class>entities.Bairro</class>
+		<class>entities.Bairros</class>
 		<class>entities.Ruas</class>
 		<class>entities.Cidade</class>
+		<class>entities.Login</class>
+		<class>entities.Denuncias</class>
 	
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:192.168.04.117""/>
-			<property name="javax.persistence.jdbc.user" value="ifotouser"/>
-			<property name="javax.persistence.jdbc.password" value="ifotopassword"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://192.168.04.170/estabilidade"/>
+			<property name="javax.persistence.jdbc.user" value="estabilidade"/>
+			<property name="javax.persistence.jdbc.password" value="projeto2019"/>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
 			<property name="hibernate.hbm2ddl.auto" value="create" />
 			<property name="hibernate.show_sql" value="true" />

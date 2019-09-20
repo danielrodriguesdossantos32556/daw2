@@ -1,8 +1,8 @@
 package entities;
 
-import java.util.ArrayList;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,21 +15,18 @@ import javax.persistence.ManyToOne;
 public class Bairros implements Identificavel {
 	@Id
 	@GeneratedValue
+	@Column(name = "Id_bairros")
 	private Long id;
-	
+
 	@ManyToOne
-	@JoinColumn(name="id_cidade")
+	@JoinColumn(name = "id_cidade")
 	private Cidade cidade;
-	
+
 	private String nome_bairro;
 	@ManyToMany
-	@JoinTable(
-			name="bairro_rua",
-			joinColumns = @JoinColumn(name="id_bairro"),
-			inverseJoinColumns = @JoinColumn(name="id_rua")
-	)
-	private ArrayList<Ruas> ruas;
-	
+	@JoinTable(name = "bairro_rua", joinColumns = @JoinColumn(name = "id_bairro"), inverseJoinColumns = @JoinColumn(name = "id_rua"))
+	private Set<Ruas> ruas;
+
 	@ManyToMany(mappedBy = "denuncias_bairros")
 	private Set<Denuncias> denuncias;
 
@@ -49,11 +46,11 @@ public class Bairros implements Identificavel {
 		this.nome_bairro = nome_bairro;
 	}
 
-	public ArrayList<Ruas> getRuas() {
+	public Set<Ruas> getRuas() {
 		return ruas;
 	}
 
-	public void setRuas(ArrayList<Ruas> ruas) {
+	public void setRuas(Set<Ruas> ruas) {
 		this.ruas = ruas;
 	}
 

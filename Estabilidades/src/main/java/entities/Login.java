@@ -1,5 +1,6 @@
 package entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,10 +11,13 @@ import javax.persistence.Table;
 public class Login implements Identificavel {
 	@Id
 	@GeneratedValue
+	@Column(name = "Id_login")
 	private Long id;
 
+	@Column(name = "login_senha_usuario")
 	private String senha_usuario;
 
+	@Column(name = "login_nickName_usuario")
 	private String nickName_usuario;
 
 	public Long getId() {
@@ -41,19 +45,13 @@ public class Login implements Identificavel {
 	}
 
 	@Override
-	public String toString() {
-		return "Login [id_login=" + id + ", senha_usuario=" + senha_usuario + ", nickName_usuario="
-				+ nickName_usuario + "]";
-	}
-
-	@Override
 	public int hashCode() {
 		final int prime = 31;
 		long result = 1;
 		result = prime * result + id;
 		result = prime * result + ((nickName_usuario == null) ? 0 : nickName_usuario.hashCode());
 		result = prime * result + ((senha_usuario == null) ? 0 : senha_usuario.hashCode());
-		return (int)result;
+		return (int) result;
 	}
 
 	@Override
@@ -80,4 +78,8 @@ public class Login implements Identificavel {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "Login [id=" + id + ", senha_usuario=" + senha_usuario + ", nickName_usuario=" + nickName_usuario + "]";
+	}
 }
