@@ -4,6 +4,8 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -13,7 +15,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "cidade")
 public class Cidade implements Identificavel {
-
+	@Id
+	@GeneratedValue
 	@Column(name = "Id_cidade")
 	private Long id;
 
@@ -106,5 +109,4 @@ public class Cidade implements Identificavel {
 	public String toString() {
 		return "Cidade [id=" + id + ", nome=" + nome + ", ruas=" + ruas + ", bairros=" + bairros + "]";
 	}
-
 }

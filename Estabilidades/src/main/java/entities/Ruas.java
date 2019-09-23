@@ -11,8 +11,9 @@ import javax.persistence.Table;
 public class Ruas implements Identificavel {
 	@Id
 	@GeneratedValue
-	@Column(name = "Id_ruas")
+	@Column(name = "id")
 	private Long id;
+	private Usuario id_Usuario;
 
 	@Column(name = "ruas_nome_ruas")
 	private String nome_ruas;
@@ -62,5 +63,13 @@ public class Ruas implements Identificavel {
 		} else if (!nome_ruas.equals(other.nome_ruas))
 			return false;
 		return true;
+	}
+
+	public Usuario getId_Usuario() {
+		return id_Usuario;
+	}
+
+	public void setId_Usuario(Usuario id_Usuario) {
+		this.id_Usuario = id_Usuario;
 	}
 }

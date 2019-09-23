@@ -23,8 +23,9 @@ public class Bairros implements Identificavel {
 	private Cidade cidade;
 
 	private String nome_bairro;
+	
 	@ManyToMany
-	@JoinTable(name = "bairro_rua", joinColumns = @JoinColumn(name = "id_bairro"), inverseJoinColumns = @JoinColumn(name = "id_rua"))
+	@JoinTable(name = "bairro_ruas", joinColumns = @JoinColumn(name = "id_bairros"), inverseJoinColumns = @JoinColumn(name = "id_ruas"))
 	private Set<Ruas> ruas;
 
 	@ManyToMany(mappedBy = "denuncias_bairros")
