@@ -9,25 +9,22 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "Denuncias")
 public class Denuncias implements Identificavel {
 	@Id
 	@GeneratedValue
-	@Column(name = "Id_denuncias")
 	private Long id;
 
 	@Column(name = "denuncias_denuncias")
 	private String denuncias;
 
 	@ManyToMany
-	@JoinTable(name = "Ruas", joinColumns = @JoinColumn(name = "id_ruas"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
+	@JoinTable(name = "denuncias_ruas", joinColumns = @JoinColumn(name = "id_denuncia"), inverseJoinColumns = @JoinColumn(name = "id_rua"))
 	private Set<Ruas> denuncias_ruas;
 
 	@ManyToMany
-	@JoinTable(name = "Bairros", joinColumns = @JoinColumn(name = "id_bairros"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
+	@JoinTable(name = "denuncias_bairros", joinColumns = @JoinColumn(name = "id_denuncia"), inverseJoinColumns = @JoinColumn(name = "id_bairros"))
 	private Set<Bairros> denuncias_bairros;
 
 	public Long getId() {

@@ -10,20 +10,18 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "cidade")
 public class Cidade implements Identificavel {
 	@Id
 	@GeneratedValue
-	@Column(name = "Id_cidade")
 	private Long id;
 
 	@Column(name = "cidade_nome")
 	private String nome;
+	
 	@ManyToMany
-	@JoinTable(name = "ruas", joinColumns = @JoinColumn(name = "id_cidade"), inverseJoinColumns = @JoinColumn(name = "id_rua"))
+	@JoinTable(name = "cidade_ruas", joinColumns = @JoinColumn(name = "id_cidade"), inverseJoinColumns = @JoinColumn(name = "id_rua"))
 	private Set<Ruas> ruas;
 
 	@OneToMany(mappedBy = "cidade")

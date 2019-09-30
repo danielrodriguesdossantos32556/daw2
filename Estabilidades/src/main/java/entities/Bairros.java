@@ -2,7 +2,6 @@ package entities;
 
 import java.util.Set;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,7 +14,6 @@ import javax.persistence.ManyToOne;
 public class Bairros implements Identificavel {
 	@Id
 	@GeneratedValue
-	@Column(name = "Id_bairros")
 	private Long id;
 
 	@ManyToOne

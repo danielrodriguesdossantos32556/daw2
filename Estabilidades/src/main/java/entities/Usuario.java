@@ -1,5 +1,6 @@
 package entities;
 
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -10,7 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-import javax.xml.crypto.Data;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "usuario")
@@ -34,10 +36,11 @@ public class Usuario implements Identificavel {
 	private String email;
 
 	@Column(name = "usuario_data_de_nascimento")
-	private Data data_de_nascimento;
+	@Temporal(TemporalType.DATE)
+	private Date data_de_nascimento;
 
 	@ManyToMany
-	@JoinTable(name = " denuncias", joinColumns = @JoinColumn(name = "id_denuncias"), inverseJoinColumns = @JoinColumn(name = "id_Usuario"))
+	@JoinTable(name = "usuario_denuncia", joinColumns = @JoinColumn(name = "id_usuario"), inverseJoinColumns = @JoinColumn(name = "id_denuncia"))
 	private Set<Denuncias> faz_denuncias;
 
 	public Long getId() {
@@ -80,11 +83,11 @@ public class Usuario implements Identificavel {
 		this.email = email;
 	}
 
-	public Data getData_de_nascimento() {
+	public Date getData_de_nascimento() {
 		return data_de_nascimento;
 	}
 
-	public void setData_de_nascimento(Data data_de_nascimento) {
+	public void setData_de_nascimento(Date data_de_nascimento) {
 		this.data_de_nascimento = data_de_nascimento;
 	}
 

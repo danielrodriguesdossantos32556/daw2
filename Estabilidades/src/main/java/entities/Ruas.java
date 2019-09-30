@@ -4,17 +4,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "ruas")
 public class Ruas implements Identificavel {
 	@Id
 	@GeneratedValue
-	@Column(name = "id")
 	private Long id;
-	private Usuario id_Usuario;
-
+	
 	@Column(name = "ruas_nome_ruas")
 	private String nome_ruas;
 
@@ -33,6 +29,8 @@ public class Ruas implements Identificavel {
 	public void setNome_ruas(String nome_ruas) {
 		this.nome_ruas = nome_ruas;
 	}
+
+
 
 	@Override
 	public int hashCode() {
@@ -65,11 +63,4 @@ public class Ruas implements Identificavel {
 		return true;
 	}
 
-	public Usuario getId_Usuario() {
-		return id_Usuario;
-	}
-
-	public void setId_Usuario(Usuario id_Usuario) {
-		this.id_Usuario = id_Usuario;
-	}
 }
