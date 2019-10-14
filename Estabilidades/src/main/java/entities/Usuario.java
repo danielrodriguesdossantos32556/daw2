@@ -38,6 +38,8 @@ public class Usuario implements Identificavel {
 	@Column(name = "usuario_data_de_nascimento")
 	@Temporal(TemporalType.DATE)
 	private Date data_de_nascimento;
+	
+	private String grupo;
 
 	@ManyToMany
 	@JoinTable(name = "usuario_denuncia", joinColumns = @JoinColumn(name = "id_usuario"), inverseJoinColumns = @JoinColumn(name = "id_denuncia"))
@@ -54,7 +56,7 @@ public class Usuario implements Identificavel {
 	public String getNova_senha() {
 		return nova_senha;
 	}
-
+ 
 	public void setNova_senha(String nova_senha) {
 		this.nova_senha = nova_senha;
 	}
@@ -165,5 +167,13 @@ public class Usuario implements Identificavel {
 		return "Usuario [id=" + id + ", nova_senha=" + nova_senha + ", novo_nickname=" + novo_nickname
 				+ ", nome_completo=" + nome_completo + ", email=" + email + ", data_de_nascimento=" + data_de_nascimento
 				+ ", faz_denuncias=" + faz_denuncias + "]";
+	}
+
+	public String getGrupo() {
+		return grupo;
+	}
+
+	public void setGrupo(String grupo) {
+		this.grupo = grupo;
 	}
 }

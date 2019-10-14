@@ -8,29 +8,7 @@
 	<title>Menu</title>
 </h:head>
 
-<h:form>
-    <p:panel id="panel" header="Novo usuario">
- 
-        <p:messages id="msgs" />
- 
-        <h:panelGrid columns="3" cellpadding="5">
-            <p:outputLabel for="firstname" value="PrimeiroNome:" />
-            <p:inputText id="firstname" value="#{userView.firstname}" required="true" label="Firstname">
-                <f:validateLength minimum="2" />
-            </p:inputText>
-            <p:message for="firstname" display="icon" />
- 
-            <p:outputLabel for="lastname" value="UltimoNome:" />
-            <p:inputText id="lastname" value="#{Usuariobean.lastname}" label="Lastname" required="true">
-                <f:validateLength minimum="2" />
-                <p:ajax update="msgLastname" event="keyup" />
-            </p:inputText>
-            <p:message for="lastname" id="msgLastname" display="icon" />
- 
-        </h:panelGrid>
-        <p:commandButton value="Salvar" update="panel" action="#{usuarioBean.save}" icon="pi pi-check" />
-    </p:panel>
-</h:form>
+
 	<style type="text/css">
     .label {
         width:20%;
@@ -59,12 +37,7 @@
         padding:4px;
     }
 </style>
- 
- 
 <h:form>
-         
-
- 
     <p:tabView >
         <p:tab id="personal" title="Personal">
             <p:panel header="Personal Details">
@@ -163,6 +136,5 @@
             </p:panel>
         </p:tab>
     </p:tabView>
- 
 </h:form>
 </html>                                                                                                                                
