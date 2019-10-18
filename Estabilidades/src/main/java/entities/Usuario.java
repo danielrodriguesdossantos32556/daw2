@@ -1,5 +1,7 @@
 package entities;
 
+import java.security.MessageDigest;
+import java.util.Base64;
 import java.util.Date;
 import java.util.Set;
 
@@ -40,6 +42,20 @@ public class Usuario implements Identificavel {
 	private Date data_de_nascimento;
 	
 	private String grupo;
+	
+	@SuppressWarnings("unused")
+	private String hash(String nova_senha) {
+		try {
+			MessageDigest md;
+			md = MessageDigest.getInstance("SHA-256");
+			md.update(nova_senha.getBytes("UTF-8"));
+			byte[] digest = md.digest();
+			String output = Base64.getEncoder().encodeToString(digest);
+			return output;
+		} catch (Exception e) {
+			return nova_senha;
+		}
+	}
 
 	@ManyToMany
 	@JoinTable(name = "usuario_denuncia", joinColumns = @JoinColumn(name = "id_usuario"), inverseJoinColumns = @JoinColumn(name = "id_denuncia"))

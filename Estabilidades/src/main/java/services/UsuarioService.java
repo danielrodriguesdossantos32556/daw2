@@ -1,6 +1,8 @@
 package services;
+import java.util.Base64;
 import java.util.List;
 import java.io.Serializable;
+import java.security.MessageDigest;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -26,7 +28,20 @@ import util.TransacionalCdi;
 	@Override
 	@TransacionalCdi
 	public  void  save ( Usuario usuario) {
+		usuario.setNova_senha(hash(usuario.getNova_senha()));
 		usuarioDAO.save(usuario);
+	}
+	private String hash(String password) {
+		try {
+			MessageDigest md;
+			md = MessageDigest.getInstance("SHA-256");
+			md.update(password.getBytes("UTF-8"));
+			byte[] digest = md.digest();
+			String output = Base64.getEncoder().encodeToString(digest);
+			return output;
+		} catch (Exception e) {
+			return password;
+		}
 	}
 	
 	/* (non-Javadoc)

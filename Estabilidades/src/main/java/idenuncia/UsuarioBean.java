@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Collection;
 
 import javax.annotation.PostConstruct;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -27,6 +29,12 @@ public class UsuarioBean implements Serializable {
 	protected Usuario entidade;
 
 	protected Collection<Usuario> entidades;
+	
+	public boolean isUserInRole(String role) {
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		ExternalContext externalContext = facesContext.getExternalContext();
+		return externalContext.isUserInRole(role);
+	}
 
 	public UsuarioBean() {
 	}
