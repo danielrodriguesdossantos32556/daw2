@@ -21,7 +21,7 @@
 			</f:facet>
 
 			<p:outputLabel value="Nome: " for="nomeField" />
-			<p:inputText id="nomeField" value="#{usuarioBean.entidade.nome}"
+			<p:inputText id="nomeField" value="#{usuarioBean.entidade.nome_completo}"
 				label="Nome" style="width:350px" />
 
 			<p:outputLabel value="E-mail: " for="emailField" />
@@ -30,7 +30,7 @@
 
 			<p:outputLabel value="Nascimento: " for="nascimentoField" />
 			<p:calendar id="nascimentoField"
-				value="#{usuarioBean.entidade.nascimento}" label="Nascimento" />
+				value="#{usuarioBean.entidade.data_de_nascimento}" label="Nascimento" />
 
 			<p:commandButton id="btnNovo" value="Novo"
 				action="#{usuarioBean.save()}" ajax="false" />
