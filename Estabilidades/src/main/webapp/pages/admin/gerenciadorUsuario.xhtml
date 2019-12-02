@@ -26,7 +26,7 @@
 
 			<p:outputLabel value="E-mail: " for="emailField" />
 			<p:inputText id="emailField" value="#{usuarioBean.entidade.email}"
-				label="Nome" style="width:350px" />
+				label="Email" style="width:350px" />
 
 			<p:outputLabel value="Nascimento: " for="nascimentoField" />
 			<p:calendar id="nascimentoField"
@@ -47,7 +47,7 @@
 			</p:column>
 			<p:column>
 				<f:facet name="header">Nome</f:facet>
-				<h:outputText value="#{entidade.nome}" />
+				<h:outputText value="#{entidade.nome_completo}" />
 			</p:column>
 			<p:column>
 				<f:facet name="header">Email</f:facet>
@@ -55,7 +55,7 @@
 			</p:column>
 			<p:column>
 				<f:facet name="header">Nascimento</f:facet>
-				<h:outputText value="#{entidade.nascimento}">
+				<h:outputText value="#{entidade.data_de_nascimento}">
 					<f:convertDateTime pattern="dd/MM/yyyy" />
 				</h:outputText>
 			</p:column>
