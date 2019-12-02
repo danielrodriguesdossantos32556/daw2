@@ -19,6 +19,7 @@ public class Bairros implements Identificavel {
 	@ManyToOne
 	@JoinColumn(name = "id_cidade")
 	private Cidade cidade;
+	private String nome_cidade;
 
 	private String nome_bairro;
 	
@@ -93,5 +94,13 @@ public class Bairros implements Identificavel {
 		} else if (!ruas.equals(other.ruas))
 			return false;
 		return true;
+	}
+
+	public String getNome_cidade() {
+		return nome_cidade;
+	}
+
+	public void setNome_cidade(String nome_cidade) {
+		this.nome_cidade = nome_cidade;
 	}
 }
