@@ -20,12 +20,8 @@ public class Denuncias implements Identificavel {
 	private String denuncias;
 
 	@ManyToMany
-	@JoinTable(name = "denuncias_ruas", joinColumns = @JoinColumn(name = "id_denuncia"), inverseJoinColumns = @JoinColumn(name = "id_rua"))
-	private Set<Ruas> denuncias_ruas;
-
-	@ManyToMany
-	@JoinTable(name = "denuncias_bairros", joinColumns = @JoinColumn(name = "id_denuncia"), inverseJoinColumns = @JoinColumn(name = "id_bairros"))
-	private Set<Bairros> denuncias_bairros;
+	@JoinTable(name = "denuncias_localidade", joinColumns = @JoinColumn(name = "id_denuncia"), inverseJoinColumns = @JoinColumn(name = "id_localidade"))
+	private Set<Localidade> denuncias_localidade;
 
 	public Long getId() {
 		return id;
@@ -43,10 +39,6 @@ public class Denuncias implements Identificavel {
 		this.denuncias = denuncias;
 	}
 
-	public Set<Ruas> getDenuncias_ruas() {
-		return denuncias_ruas;
-	}
-
 	public void setDenuncias_ruas(String denuncias) {
 		this.denuncias = denuncias;
 	}
@@ -55,19 +47,14 @@ public class Denuncias implements Identificavel {
 		return denuncias;
 	}
 
-	public void setDenuncias_bairros(Set<Bairros> denuncias) {
-		this.denuncias_bairros = denuncias;
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
-		long result = 1;
+		int result = 1;
 		result = prime * result + ((denuncias == null) ? 0 : denuncias.hashCode());
-		result = prime * result + ((denuncias_bairros == null) ? 0 : denuncias_bairros.hashCode());
-		result = prime * result + ((denuncias_ruas == null) ? 0 : denuncias_ruas.hashCode());
+		result = prime * result + ((denuncias_localidade == null) ? 0 : denuncias_localidade.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return (int) result;
+		return result;
 	}
 
 	@Override
@@ -84,15 +71,10 @@ public class Denuncias implements Identificavel {
 				return false;
 		} else if (!denuncias.equals(other.denuncias))
 			return false;
-		if (denuncias_bairros == null) {
-			if (other.denuncias_bairros != null)
+		if (denuncias_localidade == null) {
+			if (other.denuncias_localidade != null)
 				return false;
-		} else if (!denuncias_bairros.equals(other.denuncias_bairros))
-			return false;
-		if (denuncias_ruas == null) {
-			if (other.denuncias_ruas != null)
-				return false;
-		} else if (!denuncias_ruas.equals(other.denuncias_ruas))
+		} else if (!denuncias_localidade.equals(other.denuncias_localidade))
 			return false;
 		if (id == null) {
 			if (other.id != null)
@@ -104,8 +86,7 @@ public class Denuncias implements Identificavel {
 
 	@Override
 	public String toString() {
-		return "Denuncias [id=" + id + ", denuncias=" + denuncias + ", denuncias_ruas=" + denuncias_ruas
-				+ ", denuncias_bairros=" + denuncias_bairros + "]";
+		return "Denuncias [id=" + id + ", denuncias=" + denuncias + ", denuncias_localidade=" + denuncias_localidade
+				+ "]";
 	}
-
 }

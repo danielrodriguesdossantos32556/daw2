@@ -1,32 +1,17 @@
 package interfaces;
 
-import java.util.ArrayList;
+import java.util.Date;
+import java.util.Set;
 
-import javax.xml.crypto.Data;
-
-import entities.Bairros;
-import entities.Ruas;
+import entities.Localidade;
 
 public interface ProjEstabilidade {
-	
-	public void Cidade(int cep, String nome, ArrayList<Ruas> ruas, ArrayList<Bairros> bairros);
-	
-	
-	public void Bairros(int id_bairro, String nome_bairro);
-	
-	
-	public void Cadastro(int id_cadastro, String nova_senha, String novo_nickname, String nome_completo, String email, Data data_de_nascimento);
-		
-	
-	public void Denuncias(int id_denuncias, String denuncias, ArrayList<Ruas> denuncias_ruas, ArrayList<Bairros> denuncias_bairros);
-	
-	
-	public void Estabilidade(int iDC, String estabilidade);
-	
-	
-	public void Login(int id_login, String senha_usuario, String nickName_usuario);
-	
-	
-	public void Ruas(int id_ruas, String nome_ruas);
+
+	public void Denuncias(int id_denuncias, String denuncias, Set<Localidade> denuncias_localidade);
+
+	public void Localidade(String cidade, String Barros, String Ruas, long id);
+
+	public void Usuario(Long id, String nova_senha, String novo_nickname, String nome_completo, String email,
+			Date data_de_nascimento, String grupo);
 
 }
