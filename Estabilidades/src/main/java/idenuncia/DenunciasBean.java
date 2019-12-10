@@ -20,20 +20,22 @@ public class DenunciasBean implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	private Denuncias denuncia = new Denuncias();
+	protected Collection<Denuncias> entidades;
+
 	@Inject
 	private DenunciasService service;
 
-	protected Denuncias entidade;
+	protected Denuncias denuncias;
 
-	protected Collection<Denuncias> entidades;
 
 	public DenunciasBean() {
 	}
 
 	@PostConstruct
 	public void init() {
-		entidade = getEntidade();
-		
+		denuncias = getEntidade();
+
 	}
 
 	public void remove(Denuncias entidade) {
@@ -42,11 +44,11 @@ public class DenunciasBean implements Serializable {
 	}
 
 	public Denuncias getEntidade() {
-		return entidade;
+		return denuncias;
 	}
 
 	public void setEntidade(Denuncias entidade) {
-		this.entidade = entidade;
+		this.denuncias = entidade;
 	}
 
 	public Collection<Denuncias> getEntidades() {
@@ -58,7 +60,7 @@ public class DenunciasBean implements Serializable {
 	}
 
 	public void save() {
-		getService().save(entidade);
+		getService().save(denuncias);
 		limpar();
 	}
 
@@ -68,13 +70,20 @@ public class DenunciasBean implements Serializable {
 	}
 
 	public void limpar() {
-		
-		entidade = getEntidade();
-	}
 
+		denuncias = getEntidade();
+	}
 
 	public DenunciasService getService() {
 		return service;
+	}
+
+	public Denuncias getDenuncia() {
+		return denuncia;
+	}
+
+	public void setDenuncia(Denuncias denuncia) {
+		this.denuncia = denuncia;
 	}
 
 }

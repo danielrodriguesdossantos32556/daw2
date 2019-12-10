@@ -13,23 +13,29 @@ import javax.inject.Named;
 import entities.Usuario;
 import services.UsuarioService;
 
-
 @ViewScoped
 @Named
 public class UsuarioBean implements Serializable {
+	public Collection<Usuario> getUsuarios() {
+		return entidades;
+	}
+	public void setUsuario(Collection<Usuario> entidades) {
+		this.entidades = entidades;
+	}
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private Usuario usuario = new Usuario();
+	private Collection<Usuario> entidades;
+	private String nome;
 
 	@Inject
 	private UsuarioService service;
 
 	protected Usuario entidade;
 
-	protected Collection<Usuario> entidades;
-	
 	public boolean isUserInRole(String role) {
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		ExternalContext externalContext = facesContext.getExternalContext();
@@ -87,6 +93,20 @@ public class UsuarioBean implements Serializable {
 
 	public UsuarioService getService() {
 		return service;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 }

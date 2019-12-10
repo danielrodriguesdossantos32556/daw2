@@ -21,12 +21,12 @@
 			</f:facet>
 
 			<p:outputLabel value="Nome: " for="nomeField" />
-			<p:inputText id="nomeField" value="#{usuarioBean.entidade.nome_completo}"
+			<p:inputText id="nomeField" value="#{usuarioBean.entidade.novo_nickname}"
 				label="Nome" style="width:350px" />
 
 			<p:outputLabel value="E-mail: " for="emailField" />
 			<p:inputText id="emailField" value="#{usuarioBean.entidade.email}"
-				label="Email" style="width:350px" />
+				label="Nome" style="width:350px" />
 
 			<p:outputLabel value="Nascimento: " for="nascimentoField" />
 			<p:calendar id="nascimentoField"
@@ -47,7 +47,7 @@
 			</p:column>
 			<p:column>
 				<f:facet name="header">Nome</f:facet>
-				<h:outputText value="#{entidade.nome_completo}" />
+				<h:outputText value="#{entidade.nome}" />
 			</p:column>
 			<p:column>
 				<f:facet name="header">Email</f:facet>
@@ -55,7 +55,7 @@
 			</p:column>
 			<p:column>
 				<f:facet name="header">Nascimento</f:facet>
-				<h:outputText value="#{entidade.data_de_nascimento}">
+				<h:outputText value="#{entidade.nascimento}">
 					<f:convertDateTime pattern="dd/MM/yyyy" />
 				</h:outputText>
 			</p:column>
@@ -67,6 +67,6 @@
 					action="#{usuarioBean.editar(entidade.id)}"></p:commandButton>
 			</p:column>
 		</p:dataTable>
-	</h:form>
+	</h:form>cvx
 </h:body>
 </html>
