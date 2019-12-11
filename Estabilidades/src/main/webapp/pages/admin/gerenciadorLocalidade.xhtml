@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Gerenciador de Localidade</title>
+</h:head>
+
+
+<h:body>
+	<p:messages />
+
+	<h:form>
+		<p:panelGrid columns="2">
+			<f:facet name="caption">
+				<h:outputText value="Filtros" />
+			</f:facet>
+			<f:facet name="header">
+				<h:outputText value="Localidade" />
+			</f:facet>
+
+			<p:outputLabel value="Rua: " for="localField" />
+			<p:inputText id="nomeField" value="#{localidadeBean.entidade.ruas}"
+				label="Rua" style="width:350px" />
+
+			<p:outputLabel value="Cidade: " for="localField" />
+			<p:inputText id="localField"
+				value="#{localidadeBean.entidade.cidade}" label="Cidade"
+				style="width:350px" />
+
+			<p:outputLabel value="Bairros: " for="localField" />
+			<p:inputText id="localField"
+				value="#{localidadeBean.entidade.bairros}" label="Bairro"
+				style="width:350px" />
+
+			<p:commandButton id="btnNovo" value="Novo"
+				action="#{localidadeBean.save()}" ajax="false" />
+			<p:commandButton id="btnLimpar" value="Limpar"
+				action="#{localidadeBean.limpar()}" ajax="false" />
+		</p:panelGrid>
+
+
+		<p:dataTable id="dataTableEntidades" border="1" var="entidade"
+			value="#{localidadeBean.entidades}">
+			<p:column>
+				<f:facet name="header">ID</f:facet>
+				<h:outputText value="#{entidade.id}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Rua</f:facet>
+				<h:outputText value="#{entidade.rua}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Cidade</f:facet>
+				<h:outputText value="#{entidade.cidade}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Bairros</f:facet>
+				<h:outputText value="#{entidade.bairros}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Opções</f:facet>
+				<p:commandButton value="Remover" ajax="false"
+					action="#{localidadeBean.remove(entidade)}"></p:commandButton>
+				<p:commandButton value="Editar" ajax="false"
+					action="#{localidadeBean.editar(entidade.id)}"></p:commandButton>
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>

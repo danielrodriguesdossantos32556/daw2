@@ -15,11 +15,8 @@ import services.LocalidadeService;
 @Named
 public class LocalidadeBean implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
- 
+
 	@Inject
 	private LocalidadeService service;
 
@@ -28,7 +25,7 @@ public class LocalidadeBean implements Serializable {
 	protected Collection<Localidade> entidades;
 
 	public LocalidadeBean() {
-	} 
+	}
 
 	@PostConstruct
 	public void init() {
@@ -45,7 +42,7 @@ public class LocalidadeBean implements Serializable {
 		return entidade;
 	}
 
-	public void setEntidade(Localidade entidade) { 
+	public void setEntidade(Localidade entidade) {
 		this.entidade = entidade;
 	}
 
@@ -68,7 +65,7 @@ public class LocalidadeBean implements Serializable {
 	}
 
 	public void limpar() {
-
+		entidades = getService().getAll();
 		entidade = getEntidade();
 	}
 

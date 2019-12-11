@@ -1,35 +1,58 @@
 package entities;
 
-public class Localidade implements Identificavel{
+import java.util.Set;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Localidade implements Identificavel {
+	@Column(name = "cidades")
 	private String cidade;
+	@Column(name = "Bairros")
 	private String Barros;
+	@Column(name = "ruas")
 	private String Ruas;
+	@Id
+	@GeneratedValue
 	private long id;
+
+	private Set<Denuncias> denuncias_local;
+
 	public String getCidade() {
 		return cidade;
 	}
+
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
+
 	public String getBarros() {
 		return Barros;
 	}
+
 	public void setBarros(String barros) {
 		Barros = barros;
 	}
+
 	public String getRuas() {
 		return Ruas;
 	}
+
 	public void setRuas(String ruas) {
 		Ruas = ruas;
 	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(long id) {
 		this.id = id;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -40,6 +63,7 @@ public class Localidade implements Identificavel{
 		result = prime * result + (int) (id ^ (id >>> 32));
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -68,14 +92,24 @@ public class Localidade implements Identificavel{
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "Localidade [cidade=" + cidade + ", Barros=" + Barros + ", Ruas=" + Ruas + ", id=" + id + "]";
 	}
+
 	@Override
 	public void setId(Long id) {
-		// TODO Auto-generated method stub
-		
+// TODO Auto-generated method stub
+
+	}
+
+	public Set<Denuncias> getDenuncias_local() {
+		return denuncias_local;
+	}
+
+	public void setDenuncias_local(Set<Denuncias> denuncias_local) {
+		this.denuncias_local = denuncias_local;
 	}
 
 }
