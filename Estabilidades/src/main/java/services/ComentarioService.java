@@ -19,7 +19,7 @@ public class ComentarioService implements Serializable, Service<Comentarios> {
 	private static final long serialVersionUID = -7803325791425670859L;
 
 	@Inject
-	private ComentariosDAO comentáriosDAO;
+	private ComentariosDAO comentariosDAO;
 
 	/*
 	 * (non-Javadoc)
@@ -43,8 +43,8 @@ public class ComentarioService implements Serializable, Service<Comentarios> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void update(Comentarios comentários) {
-		comentáriosDAO.update(comentários);
+	public void update(Comentarios comentarios) {
+		comentariosDAO.update(comentarios);
 	}
 
 	/*
@@ -56,8 +56,8 @@ public class ComentarioService implements Serializable, Service<Comentarios> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void remove(Comentarios comentários) {
-		comentáriosDAO.remove(comentários);
+	public void remove(Comentarios comentarios) {
+		comentariosDAO.remove(comentarios);
 	}
 
 	/*
@@ -68,8 +68,8 @@ public class ComentarioService implements Serializable, Service<Comentarios> {
 	 * .ifoto.entities.Usuario)
 	 */
 	@Override
-	public Comentarios getByID(long comentários) {
-		return comentáriosDAO.getByID(comentários);
+	public Comentarios getByID(long comentarios) {
+		return comentariosDAO.getByID(comentarios);
 	}
 
 	/*
@@ -79,6 +79,6 @@ public class ComentarioService implements Serializable, Service<Comentarios> {
 	 */
 	@Override
 	public List<Comentarios> getAll() {
-		return comentáriosDAO.getAll();
+		return comentariosDAO.getAll();
 	}
 }

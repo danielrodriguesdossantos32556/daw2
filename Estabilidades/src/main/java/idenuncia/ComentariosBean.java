@@ -9,8 +9,7 @@ package idenuncia;
 	import javax.inject.Inject;
 	import javax.inject.Named;
 	import entities.Comentarios;
-import services.ComentariosService;
-import services.DenunciasService;
+import services.ComentarioService;
 
 	@ViewScoped
 	@Named
@@ -25,9 +24,9 @@ import services.DenunciasService;
 		protected Collection<Comentarios> entidades;
 
 		@Inject
-		private DenunciasService service;
+		private ComentarioService service;
 
-		protected Comentarios denuncias;
+		protected Comentarios comentario;
 
 
 		public ComentariosBean() {
@@ -75,7 +74,7 @@ import services.DenunciasService;
 			comentarios = getEntidade();
 		}
 
-		public ComentariosService getService() {
+		public ComentarioService getService() {
 			return service;
 		}
 
