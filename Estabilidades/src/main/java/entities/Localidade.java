@@ -4,8 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Localidade implements Identificavel {
@@ -18,8 +16,6 @@ public class Localidade implements Identificavel {
 	@Id
 	@GeneratedValue
 	private Long id;
-	@OneToMany
-	@JoinColumn 
 
 	public String getCidade() {
 		return cidade;

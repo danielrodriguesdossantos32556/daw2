@@ -6,11 +6,7 @@
 		<non-jta-data-source>java:/estabilidadeDS</non-jta-data-source>
 	
 		<class>entities.Usuario</class>
-		<class>entities.Cadastro</class>
-		<class>entities.Bairros</class>
-		<class>entities.Ruas</class>
-		<class>entities.Cidade</class>
-		<class>entities.Login</class>
+		<class>entities.Localidade</class>
 		<class>entities.Denuncias</class>
 	
 		<properties>
