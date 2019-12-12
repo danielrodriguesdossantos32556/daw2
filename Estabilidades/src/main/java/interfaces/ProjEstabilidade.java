@@ -14,4 +14,6 @@ public interface ProjEstabilidade {
 	public void Usuario(Long id, String nova_senha, String novo_nickname, String nome_completo, String email,
 			Date data_de_nascimento, String grupo);
 
+	public void Comentarios(Long id, String nome);
+	
 }
