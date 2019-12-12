@@ -1,15 +1,11 @@
 package entities;
 
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
-
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Comentarios implements Identificavel {
@@ -20,9 +16,9 @@ public class Comentarios implements Identificavel {
 	@Column(name = "nome_nome")
 	private String nome;
 	
-	@OneToMany
-	@JoinTable(name = "comentarios_denuncia", joinColumns = @JoinColumn(name = "id_comentarios"), inverseJoinColumns = @JoinColumn(name = "id_comentarios"))
-	private Set<Comentarios> denuncias;
+	@ManyToOne
+	@JoinColumn(name="id_denuncia")
+	private Denuncias denuncia; 
 
 	public Long getId() {
 		return id;
