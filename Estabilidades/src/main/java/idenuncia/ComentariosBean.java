@@ -9,7 +9,7 @@ package idenuncia;
 	import javax.inject.Inject;
 	import javax.inject.Named;
 	import entities.Comentarios;
-import services.ComentarioService;
+	import services.ComentarioService;
 
 	@ViewScoped
 	@Named
